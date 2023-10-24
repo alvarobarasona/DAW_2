@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora 2</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="cuerpo">
+            <div id="pantalla">
+                <span id="texto"></span>
+            </div>
+            <button id="ce" onclick="deleteAll()">C</button>
+            <button id="del" onclick="deleteChar()">←</button>
+            <button id="porcentaje" onclick="addChar('%')">%</button>
+            <br>
+            <button id="uno" onclick="addChar('1')">1</button>
+            <button id="dos" onclick="addChar('2')">2</button>
+            <button id="tres" onclick="addChar('3')">3</button>
+            <button id="suma" onclick="addChar('+')">+</button>
+            <br>
+            <button id="cuatro" onclick="addChar('4')">4</button>
+            <button id="cinco" onclick="addChar('5')">5</button>
+            <button id="seis" onclick="addChar('6')">6</button>
+            <button id="resta" onclick="addChar('-')">-</button>
+            <br>
+            <button id="siete" onclick="addChar('7')">7</button>
+            <button id="ocho" onclick="addChar('8')">8</button>
+            <button id="nueve" onclick="addChar('9')">9</button>
+            <button id="multiplicacion" onclick="addChar('x')">x</button>
+            <br>
+            <button id="cero" onclick="addChar('0')">0</button>
+            <button id="decimal" onclick="insertDecimalInNumber()">.</button>
+            <button id="division" onclick="addChar('/')">/</button>
+            <button id="igual" onclick="getOperation()">=</button>
+        </div>
+        <script src="logica.js"></script>
+    </body>
+</html>

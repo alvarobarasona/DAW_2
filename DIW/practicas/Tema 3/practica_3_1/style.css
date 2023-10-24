@@ -1,0 +1,65 @@
+/* Le doy el máximo de altura y anchura al documento html */
+html{
+    height: 100%;
+    width: 100%;
+}
+
+/* Le aplico el grid al body, le doy margen 0 y defino 4 columnas */
+body {
+    display: grid;
+    margin: 0;
+    grid-template-rows: 7% 7% 79% 7%;
+    min-height: 100%;
+}
+
+/* Le aplico grid en la fila 1 */
+#header {
+    color: white;
+    grid-row: 1;
+    padding: 1%;
+    background-color: dodgerblue;
+}
+
+/* Le aplico grid en la fila 2 */
+#navegation {
+    color: white;
+    grid-row: 2;
+    padding-top: 2%;
+    background-color: rgb(52, 163, 30);
+}
+
+/* Le aplico grid en la fila 3 */
+#notices {
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 52% 22% 26%;
+}
+
+/* Le aplico grid en la fila 1 y columna 1 dentro del contenedor notice. Manejo la altura y anchura para darle las deseadas */
+#mainNotice {
+    grid-row: 1;
+    grid-column: 1;
+    background-color: red;
+    border: 0;
+    margin-top: 0%;
+    height: 95%;
+    width: 95%;
+}
+
+/* Le aplico grid en la fila 2 y columna 2 dentro del contenedor notice. Manejo la altura y anchura para darle las deseadas */
+#hotNotice {
+    grid-row: 2;
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+}
+
+/* Le aplico grid en la fila 4 */
+#footer {
+    grid-row: 4;
+    bottom: 0;
+    background-color: rgb(46, 47, 80);
+    padding: 1%;
+}

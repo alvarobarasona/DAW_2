@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#cuerpo {
+    margin:0 auto;
+    background-color: gray;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    align-content: center;
+}
+
+#texto {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 20px;
+}
+
+#pantalla {
+    text-align: right;
+    background-color: rgb(54, 54, 54);
+    grid-column: 1/-1;
+    padding: 65px 10px 10px 10px;
+    margin: 10px 5px 8px;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+
+button {
+    background-color: rgb(197, 197, 197);
+    width: 65px;
+    height: 65px;
+    margin: 1px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+button#del {
+    width: 136px;
+    margin-top: 10px;
+}

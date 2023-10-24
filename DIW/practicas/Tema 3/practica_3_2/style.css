@@ -1,0 +1,9 @@
+.contenedor-flex {
+    display: flexbox;
+}
+
+.imagen {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+}

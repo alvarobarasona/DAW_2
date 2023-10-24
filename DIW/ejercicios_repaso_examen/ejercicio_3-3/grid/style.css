@@ -1,0 +1,93 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 100%;
+}
+
+header {
+    background-color: rgb(74, 138, 212);
+    grid-row: 1;
+}
+
+main {
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 50% 25%;
+    padding: 8px;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 14px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu {
+    margin-right: 12%;
+}
+
+.formulario {
+    margin-left: 12%;
+}
+
+.barra {
+    height: 5%;
+    margin-top: 8px;
+}
+
+.numero-1 {
+    width: 100%;
+    background-color: chartreuse;
+}
+
+.numero-2 {
+    width: 30%;
+    background-color: rgb(212, 63, 218);
+}
+
+.numero-3 {
+    width: 60%;
+    background-color: rgb(207, 108, 42);
+}
+
+.numero-4 {
+    width: 17%;
+    background-color: rgb(72, 205, 223);
+}
+
+.numero-5 {
+    width: 42%;
+    background-color: rgb(196, 45, 70);
+}
+
+p {
+    margin-bottom: 6px;
+}
+
+.input {
+    margin-bottom: 40px;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+}

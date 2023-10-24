@@ -1,0 +1,16 @@
+body {
+    border: 3px solid black;
+    padding: 10px;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+.resaltar {
+    background-color: yellow;
+}
+
+.oculto {
+    display: none;
+}

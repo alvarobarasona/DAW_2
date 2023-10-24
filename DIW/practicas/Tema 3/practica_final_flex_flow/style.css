@@ -1,0 +1,32 @@
+.contenedor-flex {
+    display: flex;
+    border: solid 1px black;
+    padding: 35px;
+    justify-content: space-around;
+}
+
+.elemento1 {
+    width: 50px;
+    height: 100px;
+    background-color: rgb(105, 175, 233);
+    margin: 15px;
+}
+
+.elemento {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(105, 175, 233);
+    margin: 15px;
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}

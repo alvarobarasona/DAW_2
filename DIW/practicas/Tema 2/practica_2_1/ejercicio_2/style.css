@@ -1,0 +1,18 @@
+
+#circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(28, 243, 154);
+    border-radius: 100%;
+    border: 9px solid rgb(3, 175, 3);
+}
+
+#text {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}

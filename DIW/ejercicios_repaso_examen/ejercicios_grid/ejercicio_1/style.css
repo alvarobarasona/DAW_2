@@ -1,0 +1,22 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    height: 300px;
+}
+
+.box {
+    border: 1px solid black;
+    width: 1fr;
+    height: 1fr;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.number-1 {
+    border: 8px red solid;
+    box-sizing:border-box;
+    grid-column: 3;
+    grid-row: 1;
+}

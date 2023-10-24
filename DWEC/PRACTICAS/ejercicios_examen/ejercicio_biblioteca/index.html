@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 1</title>
+    </head>
+    <body>
+        <h1>Ejercicio 1</h1>
+        <div>
+            <span>Título: </span>
+            <input type="text" id="inputTitle">
+        </div>
+        <div>
+            <span>Autor: </span>
+            <input type="text" id="inputAutor">
+        </div>
+        <div>
+            <span>Año: </span>
+            <input type="text" id="inputYear">
+        </div>
+        <div>
+            <span>Género: </span>
+            <input type="text" id="inputGender">
+        </div>
+        <br>
+        <button onclick = "addBook()">Agregar libro</button>
+        <br>
+        <br>
+        <div>
+            <span>Introduce el libro por nombre que deseas prestar: </span>
+            <input type="text" id="inputName">
+            <button onclick="lendBook()">Insertar nombre</button>
+        </div>
+        <div id="container"></div>
+        <script src="script.js"></script>
+    </body>
+</html>

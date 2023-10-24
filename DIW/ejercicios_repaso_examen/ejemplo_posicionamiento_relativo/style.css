@@ -1,0 +1,36 @@
+.contenedor {
+    margin: 40px;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+.elemento-absoluto { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px;
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+}
+
+.contenedor-2 {
+    width: 140px;
+    height: 140px;
+    background-color: red;
+    position: relative;
+    top: 20px;
+}
+
+p {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 0;
+    position: absolute;
+    top: 20px;
+}
+
+body {
+    margin: 0;
+}

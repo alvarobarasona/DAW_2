@@ -1,0 +1,16 @@
+.div {
+    height: 90px;
+    width: 160px;
+    background-color: rgb(75, 134, 223);
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

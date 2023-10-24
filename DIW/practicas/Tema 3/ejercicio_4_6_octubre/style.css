@@ -1,0 +1,45 @@
+.attribute {
+    margin: 10px;
+    flex: 1 1;
+    padding: 15px;
+    color: white;
+}
+
+.row {
+    flex-direction: row;
+    display: flex;
+}
+
+.column {
+    margin-top: 30px;
+    flex-direction: column;
+    display: flex;
+}
+
+.reverseRow {
+    margin-top: 34px;
+    flex-direction: row-reverse;
+    display: flex;
+}
+
+.reverseColumn {
+    margin-top: 16px;
+    flex-direction: column-reverse;
+    display: flex;
+}
+
+.section1 {
+    background-color: #db412d;
+}
+
+.section2 {
+    background-color: #468fbd;
+}
+
+.section3 {
+    background-color: #4db85f;
+}
+
+#row3 {
+    margin-top: 20px;
+}

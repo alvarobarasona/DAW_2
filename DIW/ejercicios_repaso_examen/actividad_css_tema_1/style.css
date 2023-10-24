@@ -1,0 +1,11 @@
+div {
+    column-width: 350px;
+    column-gap: 1px;
+    row-gap: 0;
+    /* column-rule: 40px solid red; */
+}
+
+body {
+    background-color: blue;
+    opacity: 30%;
+}

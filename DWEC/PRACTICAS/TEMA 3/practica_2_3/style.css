@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    background-color: rgb(153, 153, 153);
+}
+
+h1 {
+    color: rgb(27, 47, 83);
+}
+
+p{
+    color:darkcyan;
+}
+
+div {
+    justify-content: center;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
