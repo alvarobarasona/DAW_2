@@ -1,0 +1,45 @@
+<!-- 
+    Crear una aplicación de lista de tareas utilizando HTML, CSS y JavaScript. La aplicación debe
+    permitir a los usuarios agregar tareas, eliminar tareas y mover tareas hacia arriba en una lista.
+    1. La página debe tener una estructura HTML que incluya lo siguiente:
+    - Un título descriptivo.
+    - Una lista de tareas (inicialmente con al menos tres elementos).
+    - Un campo de entrada de texto para agregar nuevas tareas.
+    - Botones para agregar, eliminar y mover tareas.
+    2. Utiliza CSS para dar estilo a la lista de tareas. Por ejemplo, puedes cambiar el fondo o el color de
+    fuente de los elementos seleccionados.
+    3. Debe haber una función JavaScript para agregar tareas a la lista:
+    - Al escribir una nueva tarea en el campo de entrada y hacer clic en el botón "Agregar Tarea", la
+    nueva tarea debe agregarse al final de la lista.
+    4. Debe haber una función JavaScript para eliminar tareas:
+    - Al seleccionar una tarea haciendo clic en ella (puedes utilizar un cambio de estilo para resaltarla)
+    y hacer clic en el botón "Eliminar Tarea", la tarea seleccionada debe eliminarse de la lista.
+    5. Debe haber una función JavaScript para mover tareas hacia arriba:
+    - Al seleccionar una tarea haciendo clic en ella y hacer clic en el botón "Mover Tarea Arriba", la
+    tarea seleccionada debe moverse una posición hacia arriba en la lista (si es posible).
+ -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Práctica DOM 2-3</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <h1>Lista de Tareas</h1>
+            <ul id="unordered-list"></ul>
+            <div>
+                <input type="text" placeholder="Nueva tarea" id="input">
+                <button onclick="addTask()">Agregar Tarea</button>
+                <button onclick="deleteTask()">Eliminar Tarea</button>
+                <button onclick="moveUpTask()">Mover Tarea Arriba</button>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="script.js"></script>
+    </body>
+</html>
