@@ -1,0 +1,7 @@
+//Esto es para MySQL
+netstat -ano | findstr :3306
+
+//Esto es para MySQL
+netstat -ano | findstr :80
+
+taskkill /PID 5580 /F

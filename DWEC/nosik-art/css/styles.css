@@ -1,0 +1,698 @@
+/*Montserrat*/
+@font-face {
+    font-family: 'Montserrat-ExtraLight';
+    src: url(../fonts/Montserrat/Montserrat-ExtraLight.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url(../fonts/Montserrat/Montserrat-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(../fonts/Montserrat/Montserrat-Medium.ttf) format('truetype');
+}
+
+/*Manrope*/
+
+@font-face {
+    font-family: 'Manrope-Light';
+    src: url(../fonts/Manrope/Manrope-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Regular';
+    src: url(../fonts/Manrope/Manrope-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Medium';
+    src: url(../fonts/Manrope/Manrope-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-SemiBold';
+    src: url(../fonts/Manrope/Manrope-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-Bold';
+    src: url(../fonts/Manrope/Manrope-Bold.ttf) format('truetype');
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    background-image: url("../img/web_background.jpg");
+    object-fit: cover;
+}
+
+/* HEADER DE LA WEB */
+
+.nosik-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    gap: 20px;
+    background: #909090;
+}
+
+.nosik-header-logo {
+    margin-left: 15px;
+}
+
+.nosik-header-logo img {
+    width: 70px;
+    height: 50px;
+}
+
+/*.nosik-header-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}*/
+
+.nosik-header-list li {
+    margin-right: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.nosik-header-list li:last-child {
+    margin-right: 0;
+}
+
+.nosik-header-list a {
+    font-family: 'Montserrat-Regular';
+    text-decoration: none;
+    color: white;
+}
+
+/* CARRITO DE COMPRA */
+
+.nosik-header-shopping-cart {
+    position: relative;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+}
+
+.nosik-cart-counter {
+    position: absolute;
+    top: 55%;
+    right: 6px;
+    background-color: #000;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#cart-count {
+    font-size: 12px;
+    font-family: 'Montserrat-Medium';
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-cart {
+    display: none;
+}
+
+.nosik-cart-products {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+
+}
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0.8;
+    font-family: Montserrat-Medium;
+}
+
+.cart-product-amount {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.cart-product-name {
+    font-size: 20px;
+}
+
+.cart-product-price {
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.delete-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.delete-icon:hover{
+    stroke: black;
+    cursor: pointer;
+}
+
+.nosik-cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+    font-family: Montserrat-Medium;
+}
+
+.nosik-cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cart-total-topay {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
+/* MAIN DE LA WEB */
+
+.nosik-main {
+    flex: 1;
+    margin-top: 54px;
+}
+
+.nosik-main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PÁGINA DE SOBRE MI */
+
+.container {
+    margin: 0 15px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid lightslategrey;
+    backdrop-filter: blur(5px);
+}
+
+.nosik-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightslategrey;
+    margin-bottom: 15px;
+}
+
+.nosik-about-photo {
+    width: 400px;
+    height: 180px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.nosik-about-photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+#nosik-about-name{
+    text-align: center;
+    margin: 20px 20px 0;
+    padding: 0;
+    font-family: 'Montserrat-Medium';
+}
+
+#nosik-about-alias {
+    margin: 10px;
+    padding: 0;
+    color: #484848;
+    font-family: 'Montserrat-Regular';
+}
+
+#nosik-about-alias #artistic-name {
+    color: #d33b59;
+}
+
+#nosik-about-biography {
+    width: 80%;
+    text-align: center;
+    font-family: 'Manrope-Light';
+}
+
+.nosik-contact {
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+.nosik-contact-text {
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Montserrat-Regular';
+}
+
+.nosik-contact-text span {
+    color: #d33b59;
+}
+
+.nosik-contact-form {
+    padding: 30px;
+    border-radius: 5px;
+    background: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nosik-contact-form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.nosik-contact-form-fields {
+    flex: 1;
+    background: transparent;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #d33b59;
+    font-size: 14px;
+    font-family: 'Manrope-Regular';
+}
+
+.nosik-contact-form-fields:last-of-type {
+    margin-bottom: 0;
+}
+
+.nosik-contact-form-helplist {
+    list-style: none;
+    margin-left: -46px;
+    /*padding: 0;*/
+}
+
+.nosik-contact-form-helplist span {
+    font-size: 15px;
+    font-family: 'Manrope-Regular';
+}
+
+.nosik-contact-form-textarea {
+    margin-bottom: 15px;
+    resize: vertical;
+    height: 55px;
+    min-height: 35px;
+    max-height: 100px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-family: 'Manrope-Regular';
+}
+
+.nosik-contact-form-submit {
+    width: 100%;
+    padding: 8px;
+    color: white;
+    border: 2px solid #d33b59;
+    border-radius: 4px;
+    background: #d33b59;
+    font-size: 15px;
+    cursor: pointer;
+        font-family: 'Manrope-Medium';
+}
+
+.nosik-contact-form-submit:hover {
+    color: #d33b59;
+    border: 2px solid #d33b59;
+    background: transparent;
+}
+
+/* PÁGINA DE LA GALERÍA */
+
+.nosik-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 45px;
+    row-gap: 45px;
+    width: 1200px;
+}
+
+@media (max-width: 1260px) {
+    .nosik-gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.nosik-gallery-artwork {
+    width: 250px;
+    border: 0.5px solid #acacac;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    justify-self: center;
+    transition: 0.3s transform;
+}
+
+.nosik-gallery-artwork:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.art-image {
+    overflow: hidden;
+}
+
+.art-image img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: all .5s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.paiting-info {
+    padding: 20px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paiting-info .art-name h2,
+.paiting-info .art-year span,
+.paiting-info .art-price span {
+    padding: 0;
+    margin: 0;
+}
+
+.paiting-info .art-name {
+    font-size: 15px;
+    font-family: 'Manrope-SemiBold';
+}
+
+.paiting-info .art-year {
+    margin-top: -7px;
+}
+
+.paiting-info .art-year span {
+    font-size: 13px;
+    font-family: 'Manrope-Medium';
+}
+
+.paiting-info .art-description,
+.paiting-info .art-dimensions {
+    display: none;
+}
+
+.paiting-info .art-price {
+    align-self: flex-end;
+    margin-top: -7px;
+}
+
+.paiting-info .art-price span {
+    color: #ff4b7b;
+    font-size: 20px;
+    font-family: 'Manrope-Medium';
+}
+
+/* PÁGINA DE LA DETALLES */
+
+.nosik-art-piece {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+}
+
+.nosik-art-piece .image {
+    padding: 5px;
+    margin-left: 20px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #484848;
+}
+
+.nosik-art-piece .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #808080;
+}
+
+.art-piece-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-field {
+    font-size: 25px;
+    font-family: 'Manrope-Light';
+}
+
+.art-piece-info #name,
+.art-piece-info .info-field {
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+.art-piece-info .info-field #year,
+.art-piece-info .info-field #description,
+.art-piece-info .info-field #dimensions,
+.art-piece-info .info-field #price {
+    margin-left: 10px;
+    font-size: 36px;
+    font-family: 'Manrope-Medium';
+}
+
+.art-piece-info #name {
+    font-size: 80px;
+    font-family: 'Manrope-SemiBold';
+}
+
+.art-piece-info #field-year {
+    margin-top: -10px;
+}
+
+.art-piece-info #field-description {
+    margin-top: 50px;
+}
+
+.art-piece-info #field-dimensions {
+    margin-top: 20px;
+}
+
+
+.art-piece-info #field-price {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.art-piece-info .info-field #price {
+    color: #d33b59;
+    font-size: 56px;
+    font-family: 'Manrope-SemiBold';
+}
+
+.art-piece-pay-zone {
+    width: 135px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.add-to-cart {
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    justify-self: flex-end;
+    border: 2px solid #ff4b7b;
+    border-radius: 10px;
+    color: white;
+    background: #ff4b7b;
+    font-size: 15px;
+    font-family: 'Montserrat-Medium';
+    transition: 0.2s ease-in-out;
+}
+
+.add-to-cart:hover {
+    color: #ff4b7b;
+    background: transparent;
+}
+
+/* INDEX */
+
+.nosik-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 80px 20px;
+}
+
+#nosik-index-title {
+    margin: 0;
+}
+
+/* carousel */
+#nosik-carousel {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    width: 50px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.nosik-img-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nosik-carousel-secondary-pic {
+    height: 350px;
+    object-fit: contain;
+    border: 2px #484848 solid;
+}
+
+#pic-2 {
+    height: 450px;
+    object-fit: contain;
+    border: 4px #484848 solid;
+}
+
+/* FOOTER DE LA WEB */
+
+#nosik-footer {
+    bottom: 0;
+    grid-area: footer;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    background: #484848;
+}
+
+#nosik-footer-logo {
+    width: 150px;
+}
+
+.nosik-column-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.nosik-title-column {
+    margin-top: 0;
+    color: white;
+}
+
+.nosik-p-contact {
+    margin-top: 0;
+    color: white;
+}
+
+#nosik-rrss-div {
+    margin-top: 20px;
+}
+
+.nosik-single-rrss-div {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.nosik-p-rrss {
+    color: white;
+    margin: 0;
+}
+
+.nosik-mail-div {
+    margin-top: 15px;
+}
+
+#nosik-mail-icon {
+    width: 20px;
+    object-fit: contain;
+}
+
+.nosik-rrss-a {
+    color: white;
+    text-decoration: none;
+}
+
+#nosik-payment-img {
+    width: 250px;
+    object-fit: contain;
+}
