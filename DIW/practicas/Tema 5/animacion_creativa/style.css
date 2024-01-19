@@ -11,7 +11,7 @@ body {
     overflow: hidden;
 }
 
-#start-container {
+#container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -19,11 +19,6 @@ body {
     align-items: center;
 }
 
-#container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
 
 button {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -32,7 +27,27 @@ button {
     border: 1px black solid;
     border-radius: 10px;
     padding: 20px 30px 20px 30px;
-    background-color: rgb(191, 206, 59);
+    background-color: rgb(211, 228, 64);
+}
+
+button:hover {
+    background-color: rgb(243, 255, 131);
+    cursor: pointer;
+}
+
+#go {
+    height: 1px;
+    animation: goanimation 2s ease forwards;
+    transform-origin: center;
+}
+
+@keyframes goanimation {
+    35% {
+        transform: scale(300) rotateZ(1800deg);
+    }
+    65% {
+        transform: scale(300) rotateZ(1800deg);
+    }
 }
 
 #mario {
@@ -42,7 +57,7 @@ button {
     position: absolute;
     top: 281px;
     left: 1000px;
-    animation: mariotranslations 6s linear infinite;
+    animation: mariotranslations 6s linear;
 }
 
 @keyframes mariotranslations {
@@ -96,7 +111,7 @@ button {
     position: absolute;
     top: 526px;
     left: 400px;
-    animation: shelltranslations 6s linear infinite;
+    animation: shelltranslations 6s linear;
 }
 
 @keyframes shelltranslations {
