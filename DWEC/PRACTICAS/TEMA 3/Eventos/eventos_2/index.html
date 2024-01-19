@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TEMA 3. EVENTOS (II)</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #title-container {
+                display: flex;
+                justify-content: center;
+            }
+
+            input {
+                box-sizing: border-box;
+            }
+
+            .container {
+                border: 2px black solid;
+                padding: 10px;
+                background-color: rgb(149, 178, 231);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="title-container">
+            <h1>Lista de eventos</h1>
+        </div>
+        <div class="container">
+            <button id="click-button">Haz clic</button>
+        </div>
+        <div class="container" id="div-2">
+            Pasa el ratón por encima de mí.
+        </div>
+        <div class="container" id="div-3">
+            Lleva el ratón sobre mí y luego sácalo.
+        </div>
+        <div class="container">
+            <button id="button-2">Haz clic y mantén presionado</button>
+        </div>
+        <div class="container">
+            <form id="formulary">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="email" name="email" placeholder="Correo electrónico">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="container">
+            <input type="text" id="input1" placeholder="Escribe algo">
+        </div>
+        <div class="container">
+            <img id="image1" src="imagen.jpg" alt="Mi imagen">
+        </div>
+        <div class="container">
+            <p id="paragraph1">Este es un párrafo que se modificará después de cargar el documento.</p>
+        </div>
+        <div class="container">
+            <input type="text" id="input2" placeholder="Haz clic aquí">
+        </div>
+        <div class="container" id="div-4">
+            Haz clic derecho aquí
+        </div>
+        <div class="container">
+            <div id="draggable" draggable="true">Elemento arrastrable</div>
+            <div id="droppable">Área de destino</div>
+        </div>
+        <div class="container">
+            <a href="https://www.ejemplo.com">Ir a otro sitio web</a>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
