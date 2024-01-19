@@ -1,0 +1,152 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+/* Defino el fondo del escenario. */
+body {
+    margin: 0;
+    background-image: url("background.png");
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: white;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px;
+    background-color: rgb(211, 228, 64);
+}
+
+button:hover {
+    background-color: rgb(243, 255, 131);
+    cursor: pointer;
+}
+/* defino la dimensión inicial del text GO!, el nombre de la animación, la duración,
+el tipo de animación. que es más lento al principio y al final más rapido, y el punto origen de la animación.*/
+#go {
+    height: 1px;
+    animation: goanimation 2s ease;
+    transform-origin: center;
+}
+/*Creo la animación goanimation*/
+@keyframes goanimation {
+    /* El texto aumenta hasta este punto */
+    35% {
+        transform: scale(300) rotateZ(1800deg);
+    }
+    /* El texto se mantiene con el mismo tamaño hasta este punto de la animación, para después
+    volver a su forma origen. */
+    65% {
+        transform: scale(300) rotateZ(1800deg);
+    }
+}
+/* Defino la dimensión de Mario, le aplico una transformación de escala en el eje X, ya que el gif en internet está mirando hacia
+el otro lado, le aplico la posición absoluta para poder posicionarlo con respecto al escenario, defino su posición, el nombre de
+la animación, la duración, y el tipo de animación (en este caso es lineal, por lo que se ejecutará a la misma velocidad).  */
+#mario {
+    height: 60px;
+    width: 60px;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 281px;
+    left: 1000px;
+    animation: mariotranslations 6s linear;
+}
+/* Creo la animación mariotranslations. En ella tengo que mantener en cada keyframe la transformación en scaleX, ya que si no
+se da la vuelta el gif al llegar a ese keyframe que no lo lleve. */
+@keyframes mariotranslations {
+    /* Posición antes del salto. */
+    20% {
+        transform: translateX(-345px) scaleX(-1);
+    }
+    /* Punto medio de la subida del salto. */
+    22.5% {
+        transform: translate(-400px, -100px) scaleX(-1);
+    }
+    /* Punto más alto del salto. */
+    25% {
+        transform: translate(-450px, -150px) scaleX(-1);
+    }
+    /* Punto medio de la caída del salto. */
+    30% {
+        transform: translate(-540px, 10px) scaleX(-1);
+    }
+    /* Golpea el caparazón. */
+    35% {
+        transform: translate(-608px, 188px) scaleX(-1);
+    }
+    /* rebote por pisar el caparazón. */
+    37% {
+        transform: translate(-622px, 165px) scaleX(-1);
+    }
+    /* Pisa el suelo. */
+    39% {
+        transform: translate(-630px, 217px) scaleX(-1);
+    }
+    /* recorre el camino hasta este punto antes de tirarse por el hueco. */
+    56% {
+        transform: translate(-888px, 217px) scaleX(-1);
+    }
+    /* Punto medio de la caída desde el hueco */
+    62% {
+        transform: translate(-908px, 410px) scaleX(-1);
+    }
+    /* Llegada a la plataforma de abajo.  */
+    68% {
+        transform: translate(-930px, 603px) scaleX(-1);
+    }
+    /* Recorre el último tramo antes de saltar. */
+    72% {
+        transform: translate(-985px, 603px) scaleX(-1);
+    }
+    /* Punto medio del salto. */
+    74.5% {
+        transform: translate(-1030px, 560px) scaleX(-1);
+    }
+    /* Punto más alto del salto. */
+    77% {
+        transform: translate(-1070px, 530px) scaleX(-1);
+    }
+    /* Mantengo el mismo punto hasta el final de la animación, ya que si no Mario regresa a la posición inicial. */
+    100% {
+        transform: translate(-1070px, 530px) scaleX(-1);
+    }
+}
+/* Defino la dimensión del caparazón,
+el otro lado, le aplico la posición absoluta para poder posicionarlo con respecto al escenario, defino su posición, el nombre de
+la animación, la duración, y el tipo de animación (en este caso es lineal, por lo que se ejecutará a la misma velocidad).  */
+#shell {
+    height: 32px;
+    width: 30px;
+    position: absolute;
+    top: 526px;
+    left: 400px;
+    animation: shelltranslations 6s linear;
+}
+
+@keyframes shelltranslations {
+    35% {
+        transform: translate(0px, 0px);
+    }
+    36% {
+        transform: translate(0px, -20px) rotate(180deg);
+    }
+    56% {
+        transform: translate(0px, 550px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0px, 550px) rotate(180deg);
+    }
+}

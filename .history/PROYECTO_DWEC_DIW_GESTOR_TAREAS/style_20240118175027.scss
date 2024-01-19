@@ -1,0 +1,65 @@
+$background_color: #001F3F;
+$header_color: #0074D9;
+$space: 10px;
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $background_color;
+    margin: 0;
+}
+header {
+    background-color: $header_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space;
+}
+h1 {
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+    padding: $space;
+}
+form {
+    background-color: $header_color;
+    padding: $space;
+    border-radius: $space;
+    display: flex;
+    justify-content: space-between;
+    gap: $space;
+}
+#input-container {
+    display: flex;
+    gap: $space;
+    flex-grow: initial;
+}
+input {
+    
+}
+#tasks-container {
+    display: flex;
+    justify-content: space-between;
+    gap: $space;
+}
+h2 {
+    margin: 0;
+}
+.task {
+    padding: $space;
+    width: 90%;
+}
+.no-iniciated {
+    
+}
+/*
+Azul Oscuro: #001F3F
+Azul Medio: #0074D9
+Azul Claro: #7FDBFF
+Azul Turquesa: #39CCCC
+Azul Marino: #001f3f
+Azul Grisáceo: #8499a5
+*/

@@ -1,0 +1,20 @@
+$background_color: #001F3F;
+$header_color: #0074D9;
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $background_color;
+}
+header {
+    background-color: $header_color;
+}
+
+/*
+Azul Oscuro: #001F3F
+Azul Medio: #0074D9
+Azul Claro: #7FDBFF
+Azul Turquesa: #39CCCC
+Azul Marino: #001f3f
+Azul Grisáceo: #8499a5
+*/

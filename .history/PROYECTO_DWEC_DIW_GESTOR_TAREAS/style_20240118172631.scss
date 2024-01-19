@@ -1,0 +1,50 @@
+$background_color: #001F3F;
+$header_color: #0074D9;
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $background_color;
+    margin: 0;
+}
+header {
+    background-color: $header_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    padding: 10px;
+}
+form {
+    background-color: $header_color;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#input-container {
+    display: flex;
+    gap: 5px;
+    flex-grow: initial;
+}
+input {
+    
+}
+#tasks-container {
+    display: flex;
+}
+.task {
+    padding: ;
+}
+.no-iniciated {
+
+}
+/*
+Azul Oscuro: #001F3F
+Azul Medio: #0074D9
+Azul Claro: #7FDBFF
+Azul Turquesa: #39CCCC
+Azul Marino: #001f3f
+Azul Grisáceo: #8499a5
+*/

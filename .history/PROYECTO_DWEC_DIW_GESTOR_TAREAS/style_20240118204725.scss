@@ -1,0 +1,86 @@
+$background_color: #001F3F;
+$dark_blue: rgb(0, 9, 37);
+$mid_blue: #0074D9;
+$light_blue: #7FDBFF;
+$space: 10px;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $background_color;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+}
+header {
+    background-color: $mid_blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space;
+}
+h1 {
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+    padding: $space;
+}
+form {
+    background-color: $mid_blue;
+    padding: $space;
+    border-radius: $space;
+    display: flex;
+
+    gap: $space;
+}
+#input-container {
+    display: flex;
+    gap: $space;
+    width: 100%;
+}
+input {
+    display: flex;
+    flex-grow: length($list: 1);
+}
+button {
+    color: white;
+    background-color: $background_color;
+}
+#tasks-container {
+    display: flex;
+    justify-content: space-between;
+    gap: $space;
+}
+h2 {
+    margin: 0;
+}
+.task {
+    display: flex;
+    justify-content: center;
+    padding: $space;
+    width: 90%;
+    border-radius: $space;
+}
+.no-iniciated {
+    background-color: $dark_blue;
+}
+.iniciated {
+    background-color: $mid_blue;
+}
+.finalizated {
+    background-color: $light_blue;
+}
+footer {
+    back
+}
+/*
+Azul Oscuro: #001F3F
+Azul Medio: #0074D9
+Azul Claro: #7FDBFF
+Azul Turquesa: #39CCCC
+Azul Marino: #001f3f
+Azul Grisáceo: #8499a5
+*/
