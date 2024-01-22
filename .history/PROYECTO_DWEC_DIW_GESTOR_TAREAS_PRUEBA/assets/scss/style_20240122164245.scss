@@ -1,12 +1,12 @@
-@import "abstracts/variables";
+@import "abstract/variables";
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: map-get($web_colors, "background_color");
+    background-color: map-get($web_colors, "background_color" );
     margin: 0;
     font-family: $font_type;
-    color: map_get($web_colors, "font_color");
+    color: map_get($web_colors);
 }
 header {
     background-color: map-get($web_colors, "mid_blue" );
@@ -42,7 +42,7 @@ input {
     flex-grow: length($list: 1);
 }
 button {
-    color: map_get($web_colors, "font_color");
+    color: white;
     background-color: map-get($web_colors, "background_color" );;
 }
 #tasks-container {

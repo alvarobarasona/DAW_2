@@ -1,12 +1,16 @@
-@import "abstracts/variables";
+@import "abstract/variables";
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+$font_type: 'PT Sans', sans-serif;
+$font_color: white;
 body {
     display: flex;
     flex-direction: column;
-    background-color: map-get($web_colors, "background_color");
+    background-color: map-get($web_colors, "background_color" );
     margin: 0;
     font-family: $font_type;
-    color: map_get($web_colors, "font_color");
+    color: $font_color;
 }
 header {
     background-color: map-get($web_colors, "mid_blue" );
@@ -42,7 +46,7 @@ input {
     flex-grow: length($list: 1);
 }
 button {
-    color: map_get($web_colors, "font_color");
+    color: white;
     background-color: map-get($web_colors, "background_color" );;
 }
 #tasks-container {

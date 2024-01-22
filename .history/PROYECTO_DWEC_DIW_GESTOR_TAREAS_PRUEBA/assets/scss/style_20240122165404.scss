@@ -42,7 +42,7 @@ input {
     flex-grow: length($list: 1);
 }
 button {
-    color: map_get($web_colors, "font_color");
+    color: white;
     background-color: map-get($web_colors, "background_color" );;
 }
 #tasks-container {
