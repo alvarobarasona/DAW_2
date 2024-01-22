@@ -1,0 +1,11 @@
+{
+  "name": "task_gestor",
+  "version": "0.0.1",
+  "description": "Gestor de tareas",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./assets/scss/style.scss:./assets/css/style.css"
+  },
+  "author": "Alvaro",
+  "license": "ISC"
+}
