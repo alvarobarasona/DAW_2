@@ -1,0 +1,3 @@
+function showSuggestions(str) {
+    if() {}
+}
