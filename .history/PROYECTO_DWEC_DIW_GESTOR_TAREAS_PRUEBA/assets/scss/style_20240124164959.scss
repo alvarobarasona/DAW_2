@@ -1,0 +1,88 @@
+@import "abstracts/variables";
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($web_colors, "background_color");
+    margin: 0;
+    font-family: $font_type;
+    color: map_get($web_colors, "font_color");
+
+header {
+    background-color: map-get($web_colors, "mid_blue" );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space;
+}
+h1 {
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+    padding: $space;
+}
+form {
+    background-color: map-get($web_colors, "mid_blue" );
+    padding: $space;
+    border-radius: $containers_radius;
+    display: flex;
+
+    gap: $space;
+}
+#input-container {
+    display: flex;
+    gap: $space;
+    width: 100%;
+}
+input {
+    display: flex;
+    flex-grow: length($list: 1);
+}
+button {
+    color: map_get($web_colors, "font_color");
+    background-color: map-get($web_colors, "background_color" );;
+}
+#tasks-container {
+    display: flex;
+    justify-content: space-between;
+    gap: $space;
+}
+h2 {
+    margin: 0;
+}
+@mixin task_container($background_color) {
+    display: flex;
+    justify-content: center;
+    padding: $space;
+    width: 90%;
+    border-radius: $containers_radius;
+    background-color: $background_color;
+}
+#no-iniciated {
+    @include task_container(map-get($web_colors, "dark_blue" ));
+}
+#iniciated {
+    @include task_container(map-get($web_colors, "mid_blue" ));
+}
+#finalizated {
+    @include task_container(map-get($web_colors, "light_blue" ));
+}
+footer {
+    background-color: map-get($web_colors, "dark_blue" );
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+/*
+Azul Oscuro: #001F3F
+Azul Medio: #0074D9
+Azul Claro: #7FDBFF
+Azul Turquesa: #39CCCC
+Azul Marino: #001f3f
+Azul Grisáceo: #8499a5
+*/

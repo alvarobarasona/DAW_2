@@ -10,7 +10,8 @@ body {
   background-color: #001F3F;
   height: 100%;
   margin: 0;
-  color: white; }
+  color: white;
+  font-family: "PT Sans", sans-serif; }
 
 header {
   grid-row: 1;
@@ -40,7 +41,11 @@ form {
   background-color: #0074D9;
   padding: 10px;
   border-radius: 8px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px; }
 
 #tasks-container {
   display: grid;
@@ -85,6 +90,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+a {
+  color: white;
+  text-decoration: none; }
 
 /*
 Azul Oscuro: #001F3F
