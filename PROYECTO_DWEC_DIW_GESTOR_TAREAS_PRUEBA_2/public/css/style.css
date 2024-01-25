@@ -7,7 +7,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
   grid-template-columns: 1fr;
-  background-color: #001F3F;
+  background-color: #000925;
   height: 100%;
   margin: 0;
   color: white;
@@ -30,9 +30,8 @@ main {
   grid-row: 2;
   grid-column: 1;
   padding: 10px;
-  display: grid;
-  grid-template-rows: 1fr 6fr;
-  grid-template-columns: 1fr; }
+  display: flex;
+  flex-direction: column; }
 
 form {
   grid-row: 1;
@@ -45,21 +44,23 @@ form {
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  height: fit-content; }
 
 #tasks-container {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 10px; }
 
 #no-iniciated {
-  background-color: #000925;
+  background-color: #001F3F;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  width: 100%;
+  height: fit-content; }
   #no-iniciated h2 {
     margin: 0; }
 
@@ -69,24 +70,138 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  width: 100%;
+  height: fit-content; }
   #iniciated h2 {
     margin: 0; }
 
 #finalizated {
-  background-color: #7FDBFF;
+  background-color: #3dc8ff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  width: 100%;
+  height: fit-content; }
   #finalizated h2 {
     margin: 0; }
+
+#no-iniciated-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+#iniciated-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+#finalizated-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+#add-task-button {
+  color: #7be700;
+  background-color: #0074D9;
+  border-style: none;
+  font-size: 20px; }
+  #add-task-button:hover {
+    color: white; }
+
+.no-iniciated-task {
+  background-color: #0074D9;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between; }
+  .no-iniciated-task #modify-task-button {
+    color: #ee8309;
+    background-color: #0074D9;
+    border-style: none;
+    font-size: 20px; }
+    .no-iniciated-task #modify-task-button:hover {
+      color: white; }
+  .no-iniciated-task #delete-task-button {
+    color: #ff4538;
+    background-color: #0074D9;
+    border-style: none;
+    font-size: 20px; }
+    .no-iniciated-task #delete-task-button:hover {
+      color: white; }
+  .no-iniciated-task #move-task-button {
+    color: #9236c7;
+    background-color: #0074D9;
+    border-style: none;
+    font-size: 20px; }
+    .no-iniciated-task #move-task-button:hover {
+      color: white; }
+
+.iniciated-task {
+  background-color: #3dc8ff;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between; }
+  .iniciated-task #modify-task-button {
+    color: #ee8309;
+    background-color: #3dc8ff;
+    border-style: none;
+    font-size: 20px; }
+    .iniciated-task #modify-task-button:hover {
+      color: white; }
+  .iniciated-task #delete-task-button {
+    color: #ff4538;
+    background-color: #3dc8ff;
+    border-style: none;
+    font-size: 20px; }
+    .iniciated-task #delete-task-button:hover {
+      color: white; }
+  .iniciated-task #move-task-button {
+    color: #9236c7;
+    background-color: #3dc8ff;
+    border-style: none;
+    font-size: 20px; }
+    .iniciated-task #move-task-button:hover {
+      color: white; }
+
+.finalizated-task {
+  background-color: #001F3F;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between; }
+  .finalizated-task #modify-task-button {
+    color: #ee8309;
+    background-color: #001F3F;
+    border-style: none;
+    font-size: 20px; }
+    .finalizated-task #modify-task-button:hover {
+      color: white; }
+  .finalizated-task #delete-task-button {
+    color: #ff4538;
+    background-color: #001F3F;
+    border-style: none;
+    font-size: 20px; }
+    .finalizated-task #delete-task-button:hover {
+      color: white; }
+  .finalizated-task #move-task-button {
+    color: #9236c7;
+    background-color: #001F3F;
+    border-style: none;
+    font-size: 20px; }
+    .finalizated-task #move-task-button:hover {
+      color: white; }
 
 footer {
   grid-row: 3;
   grid-column: 1;
-  background-color: #000925;
+  background-color: #001F3F;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -102,6 +217,10 @@ Azul Claro: #7FDBFF
 Azul Turquesa: #39CCCC
 Azul Marino: #001f3f
 Azul Grisáceo: #8499a5
+Botón añadir: #74D900
+Botón modificar: #D97400
+Botón eliminar: #D90074
+Botón mover: #745AD9
 */
 
 /*# sourceMappingURL=style.css.map */
