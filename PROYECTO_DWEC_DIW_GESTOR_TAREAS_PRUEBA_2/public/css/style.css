@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 html {
   height: 100%; }
 
@@ -110,7 +112,8 @@ form {
   color: #7be700;
   background-color: #0074D9;
   border-style: none;
-  font-size: 20px; }
+  font-size: 20px;
+  cursor: pointer; }
   #add-task-button:hover {
     color: white; }
 
@@ -124,21 +127,24 @@ form {
     color: #ee8309;
     background-color: #0074D9;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .no-iniciated-task #modify-task-button:hover {
       color: white; }
   .no-iniciated-task #delete-task-button {
     color: #ff4538;
     background-color: #0074D9;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .no-iniciated-task #delete-task-button:hover {
       color: white; }
   .no-iniciated-task #move-task-button {
     color: #9236c7;
     background-color: #0074D9;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .no-iniciated-task #move-task-button:hover {
       color: white; }
 
@@ -152,21 +158,24 @@ form {
     color: #ee8309;
     background-color: #3dc8ff;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .iniciated-task #modify-task-button:hover {
       color: white; }
   .iniciated-task #delete-task-button {
     color: #ff4538;
     background-color: #3dc8ff;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .iniciated-task #delete-task-button:hover {
       color: white; }
   .iniciated-task #move-task-button {
     color: #9236c7;
     background-color: #3dc8ff;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .iniciated-task #move-task-button:hover {
       color: white; }
 
@@ -180,21 +189,24 @@ form {
     color: #ee8309;
     background-color: #001F3F;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .finalizated-task #modify-task-button:hover {
       color: white; }
   .finalizated-task #delete-task-button {
     color: #ff4538;
     background-color: #001F3F;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .finalizated-task #delete-task-button:hover {
       color: white; }
   .finalizated-task #move-task-button {
     color: #9236c7;
     background-color: #001F3F;
     border-style: none;
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
     .finalizated-task #move-task-button:hover {
       color: white; }
 

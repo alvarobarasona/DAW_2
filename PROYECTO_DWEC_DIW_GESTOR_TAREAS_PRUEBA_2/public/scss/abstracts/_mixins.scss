@@ -1,0 +1,27 @@
+@import "functions";
+@import "variables";
+// Mixing genérico para los botones de la web.
+@mixin button($button_font_color, $task_background_color) {
+    color: getColor($button_font_color);
+    background-color: getColor($task_background_color);
+    border-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+        color: getColor("font_color");
+    }
+}
+// Mixing genérico para la columnas de tareas.
+@mixin task($task_background_color) {
+    background-color: getColor($task_background_color);
+    padding: $space;
+    border-radius: $containers_radius;
+    display: flex;
+    justify-content: space-between;
+    // Utilizo la función zip para combinar los dos arrays y luego los recorro simultáneamente con un @each.
+    @each $task_type, $button_name in zip($task_types, $button_names) {
+        ##{$task_type} {
+            @include button($button_name, $task_background_color);
+        }
+    }
+}

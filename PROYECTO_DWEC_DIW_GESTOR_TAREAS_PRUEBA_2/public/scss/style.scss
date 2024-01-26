@@ -1,6 +1,7 @@
 @import "abstracts/variables";
+@import "abstracts/mixins";
 html {
-    height: 100%;
+    height: $max_percentage;
 }
 body {
     display: grid;
@@ -54,7 +55,7 @@ form {
     justify-content: space-between;
     gap: $space;
 }
-@mixin task($color, $radius) {
+@mixin tasks_container($color, $radius) {
     background-color: $color;
     border-radius: $radius;
     display: flex;
@@ -68,13 +69,13 @@ form {
     }
 }
 #no-iniciated {
-    @include task(map-get($web_colors, "dark_blue"), $containers_radius);
+    @include tasks_container(map-get($web_colors, "dark_blue"), $containers_radius);
 }
 #iniciated {
-    @include task(map-get($web_colors, "mid_blue"), $containers_radius);
+    @include tasks_container(map-get($web_colors, "mid_blue"), $containers_radius);
 }
 #finalizated {
-    @include task(map-get($web_colors, "light_blue"), $containers_radius);
+    @include tasks_container(map-get($web_colors, "light_blue"), $containers_radius);
 }
 #no-iniciated-tasks {
     width: 100%;
@@ -95,115 +96,17 @@ form {
     gap: $space;
 }
 #add-task-button {
-    color: map-get($web_colors, "add_button");
-    background-color: map-get($web_colors, "mid_blue");
-    border-style: none;
-    font-size: 20px;
-    &:hover {
-        color: white;
-    }
+    @include button("add_button", "mid_blue");
 }
+
 .no-iniciated-task {
-    background-color: map-get($web_colors, "mid_blue");
-    padding: $space;
-    border-radius: $containers_radius;
-    display: flex;
-    justify-content: space-between;
-    #modify-task-button {
-        color: map-get($web_colors, "modify_button");
-        background-color: map-get($web_colors, "mid_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #delete-task-button {
-        color: map-get($web_colors, "delete_button");;
-        background-color: map-get($web_colors, "mid_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #move-task-button {
-        color: map-get($web_colors, "move_button");;
-        background-color: map-get($web_colors, "mid_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
+    @include task("mid_blue");
 }
 .iniciated-task {
-    background-color: map-get($web_colors, "light_blue");
-    padding: $space;
-    border-radius: $containers_radius;
-    display: flex;
-    justify-content: space-between;
-    #modify-task-button {
-        color: map-get($web_colors, "modify_button");
-        background-color: map-get($web_colors, "light_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #delete-task-button {
-        color: map-get($web_colors, "delete_button");;
-        background-color: map-get($web_colors, "light_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #move-task-button {
-        color: map-get($web_colors, "move_button");;
-        background-color: map-get($web_colors, "light_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
+    @include task("light_blue");
 }
 .finalizated-task {
-    background-color: map-get($web_colors, "dark_blue");
-    padding: $space;
-    border-radius: $containers_radius;
-    display: flex;
-    justify-content: space-between;
-    #modify-task-button {
-        color: map-get($web_colors, "modify_button");
-        background-color: map-get($web_colors, "dark_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #delete-task-button {
-        color: map-get($web_colors, "delete_button");;
-        background-color: map-get($web_colors, "dark_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
-    #move-task-button {
-        color: map-get($web_colors, "move_button");;
-        background-color: map-get($web_colors, "dark_blue");
-        border-style: none;
-        font-size: 20px;
-        &:hover {
-            color: white;
-        }
-    }
+    @include task("dark_blue");
 }
 footer {
     grid-row: 3;

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-//Array con los colores de la web
-
+//Array con los colores de la web.
 $web_colors: (
     "background_color" : rgb(0, 9, 37),
     "dark_blue" : #001F3F,
@@ -12,6 +11,14 @@ $web_colors: (
     "delete_button" : #ff4538,
     "move_button" : #9236c7
 );
+// Distancia de paddings y espacio entre contenedores en la web.
 $space: 10px;
+// Radio de las esquinas de los divs de la web
 $containers_radius: 8px;
 $font_type: 'PT Sans', sans-serif;
+// Array con los nombres de los id de los botones de cada tarea.
+$task_types: ("modify-task-button", "delete-task-button", "move-task-button");
+// Array con los nombres de los colores de los botones de cada tarea.
+$button_names: ("modify_button", "delete_button", "move_button");
+// Porcentaje máximo
+$max_percentage: 100%;
