@@ -1,3 +1,9 @@
-{"no-iniciated": [],
-"iniciated": [],
-"finalizated": []}
+{
+    "task" : [
+        {
+            "name" : "Prueba",
+            "state" : "PROCESS",
+            "description" : "ASASAS"
+        }
+    ]
+}

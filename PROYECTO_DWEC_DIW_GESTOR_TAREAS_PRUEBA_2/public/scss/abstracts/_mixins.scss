@@ -1,6 +1,6 @@
 @import "functions";
 @import "variables";
-// Mixing genérico para los botones de la web.
+// Mixing genérico para generar el estilo de los botones de la web.
 @mixin button($button_font_color, $task_background_color) {
     color: getColor($button_font_color);
     background-color: getColor($task_background_color);
@@ -11,7 +11,7 @@
         color: getColor("font_color");
     }
 }
-// Mixing genérico para la columnas de tareas.
+// Mixing genérico para generar el estilo de las tareas en las columnas de tareas.
 @mixin task($task_background_color) {
     background-color: getColor($task_background_color);
     padding: $space;

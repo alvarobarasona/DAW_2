@@ -1,59 +1,21 @@
-//Guardo en módulo de express en la constante EXPRESS.
-const EXPRESS = require('express');
-//
-const BODY_PARSER = require('body-parser');
-//Guardo en módulo de file system en la constante FS.
-const FS = require('fs');
-//Guardo en la constante APP la función del módulo express.
+const EXPRESS = require("express");
 const APP = EXPRESS();
-//Guardo el número de puerto en la constante PORT.
-const PORT = 8080;
-//
-APP.use(EXPRESS.static(__dirname + '/public'));
-//
-APP.use(BODY_PARSER.urlencoded({ extended: true }));
+const PORT = 5501;
+const path = require('path')
 
-APP.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+APP.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'css', 'style.css'));
 });
 
-APP.get('/tasks', (req, res) => {
-    FS.readFile(__dirname + '/data/tasks.json', (err, data) => {
-        if (err) throw err;
-        res.json(JSON.parse(data));
-    });
-});
-
-APP.post('/tasks', (req, res) => {
-    const newTask = { id: Date.now(), description: req.body.description, type: staus };
-
-    FS.readFile(__dirname + '/data/tasks.json', (err, data) => {
-        if (err) throw err;
-        const tasks = JSON.parse(data).tasks;
-        tasks.push(newTask);
-        FS.writeFile(__dirname + '/data/tasks.json', JSON.stringify({ tasks }), (err) => {
-            if (err) throw err;
-            res.json(newTask);
-        });
-    });
-});
-
-APP.delete('/tasks/:id', (req, res) => {
-    const taskId = Number(req.params.id);
-
-    FS.readFile(__dirname + '/data/tasks.json', (err, data) => {
-        if (err) throw err;
-        let tasks = JSON.parse(data).tasks;
-        
-        tasks = tasks.filter(task => task.id !== taskId);
-        
-        FS.writeFile(__dirname + '/data/tasks.json', JSON.stringify({ tasks }), (err) => {
-            if (err) throw err;
-            res.json({ id: taskId });
-        });
-    });
+APP.get("/data", (req, res) => {
+    const JSON_DATA = require(path.join(__dirname, 'data', 'tasks.json'));
+    console.log(JSON_DATA);
+    res.json(JSON_DATA);
 });
 
 APP.listen(PORT, () => {
-    console.log(`Server running on port http://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });
+
+APP.use(EXPRESS.static(path.join(__dirname, 'public')));
