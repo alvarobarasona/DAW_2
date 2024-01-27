@@ -4,7 +4,8 @@
   "description": "Gestor de tareas",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./public/scss/style.scss:./public/css/style.css"
+    "sass": "sass --watch ./public/scss/style.scss:./public/css/style.css",
+    "start": "node server.js && npm run open"
   },
   "author": "Alvaro",
   "license": "ISC"

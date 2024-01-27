@@ -5,7 +5,6 @@ const path = require('path')
 
 APP.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
-    res.sendFile(path.join(__dirname, 'public', 'css', 'style.css'));
 });
 
 APP.get("/data", (req, res) => {

@@ -1,9 +1,19 @@
 {
     "task" : [
         {
-            "name" : "Prueba",
-            "state" : "PROCESS",
-            "description" : "ASASAS"
+            "name" : "Hacer la compra",
+            "id": 132345,
+            "state" : "no iniciada"
+        },
+        {
+            "name" : "Sacar al perro",
+            "id": 644567,
+            "state" : "iniciada"
+        },
+        {
+            "name" : "Llamar a Paco",
+            "id": 875889,
+            "state" : "finalizada"
         }
     ]
 }
