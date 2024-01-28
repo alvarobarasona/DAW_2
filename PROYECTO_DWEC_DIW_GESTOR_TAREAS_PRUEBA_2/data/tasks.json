@@ -3,17 +3,17 @@
         {
             "name" : "Hacer la compra",
             "id": 132345,
-            "state" : "no iniciada"
+            "state" : "ANALYSING"
         },
         {
             "name" : "Sacar al perro",
             "id": 644567,
-            "state" : "iniciada"
+            "state" : "IN_PROGRESS"
         },
         {
             "name" : "Llamar a Paco",
             "id": 875889,
-            "state" : "finalizada"
+            "state" : "DEPLOYED"
         }
     ]
 }

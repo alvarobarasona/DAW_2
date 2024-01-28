@@ -2,33 +2,60 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("/data")
     .then(response => response.json())
     .then(data => {
-        const ADD_TASK_BUTTON = document.getElementById("add-task-button");
-        ADD_TASK_BUTTON.addEventListener("click", () => {
-            var acc = 0;
-            addTask(data, acc);
-            acc++;
-        });
-        // console.log(data.task[0].name);
-        // data.task.forEach(element => {
-        //     document.getElementById()
-        // });
+        showTasks(data);
     })
     .catch(error => console.error("Error al cargar al cargar el archivo JSON", error))
 });
-function addTask(data, i) {
-    const NO_INICIATED_TASK = document.createElement("div");
-    NO_INICIATED_TASK.classList.add("no-iniciated-task");
-    const NO_INICIATED_TASKS = document.getElementById("no-iniciated-tasks");
-    NO_INICIATED_TASKS.appendChild(NO_INICIATED_TASK);
-    const DATA_TASK_DIV = document.createElement("div");
-    NO_INICIATED_TASK.appendChild(DATA_TASK_DIV);
-    const TASK_NAME = document.createElement("span");
-    TASK_NAME.innerHTML = data.task[i].name;
-    DATA_TASK_DIV.appendChild(TASK_NAME);
-    const TASK_ID_LABEL = document.createElement("span");
-    TASK_ID_LABEL.innerHTML = "ID:";
-    DATA_TASK_DIV.appendChild(TASK_ID_LABEL);
-    const TASK_ID = document.createElement("span");
-    TASK_ID.innerHTML = Date.now();
-    DATA_TASK_DIV.appendChild(TASK_ID);
+
+function showTasks(data) {
+    
+    let taskList = data.task;
+    console.log(taskList);
+
+    taskList.forEach(task => {
+        
+        switch(task.state) {
+
+            case "ANALYSING": 
+                console.log("Hello analysing")
+                createTaskElement("no-iniciated-task", "no-iniciated-tasks", task.name);
+            break;
+            case "IN_PROGRESS":
+                console.log("Hello in-progress")
+
+                createTaskElement("iniciated-task", "iniciated-tasks", task.name);
+            break;
+            case "DEPLOYED":
+                console.log("Hello deploy")
+                createTaskElement("finalizated-task", "finalizated-tasks", task.name);
+            break;
+        }
+    }); 
+}
+
+function createTaskElement(newClassName, taskContainerClass, taskName){
+
+    let rootDiv = document.createElement("div")
+    rootDiv.classList.add(newClassName);
+
+    let spanName = createElement(taskName);
+    console.log(spanName);
+
+    let spanId = createElement("ID");
+    console.log(spanId);
+    
+    let spanDate = createElement(Date.now());
+    console.log(spanDate);
+
+    rootDiv.appendChild(spanName);
+    rootDiv.appendChild(spanId);
+    rootDiv.appendChild(spanDate);
+    
+    return document.getElementById(taskContainerClass).appendChild(rootDiv);
+}
+
+function createElement(data) {
+    let span = document.createElement("span");
+    span.innerHTML = data;
+    return span;
 }
