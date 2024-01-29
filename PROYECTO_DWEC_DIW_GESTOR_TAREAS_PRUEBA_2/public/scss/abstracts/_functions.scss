@@ -3,11 +3,3 @@
 @function get_color($color_name) {
     @return map-get($web_colors, $color_name);
 }
-// @function add_task_button($task_background_color) {
-//         // Utilizo la función zip para combinar los dos arrays y luego los recorro simultáneamente con un @each.
-//     @each $task_type, $button_name in zip($task_types, $button_names) {
-//         ##{$task_type} {
-//                 @include button($button_name, $task_background_color);
-//         }
-//     }
-// }

@@ -13,9 +13,16 @@ $web_colors: (
 );
 // Distancia de paddings y espacio entre contenedores en la web.
 $space: 10px;
-// Radio de las esquinas de los divs de la web
+//Distancia entre los títulos de cada columna de tareas y el contenedor de tareas.
+$tasks_header_title_space: 20px;
+//Padding del footer.
+$footer_padding: 50px;
+// Radio de las esquinas de los divs de la web.
 $containers_radius: 8px;
+//Tipografía de la web
 $font_type: 'PT Sans', sans-serif;
+//Tamaño del texto de los botones.
+$buttons_font_size: 20px;
 // Array con los nombres de los id de los botones de cada tarea.
 $task_types: ("modify-task-button", "delete-task-button", "move-task-button");
 // Array con los nombres de los colores de los botones de cada tarea.
