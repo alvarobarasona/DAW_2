@@ -2,53 +2,47 @@
 @import "abstracts/mixins";
 html {
     height: $max_percentage;
+    @include responsive(320px) {height:866px}
 }
 body {
     display: grid;
     grid-template-rows: 1fr 20fr 1fr;
     grid-template-columns: 1fr;
-    background-color: map-get($web_colors , "background_color");
+    background-color: get_color("background_color");
     height: $max_percentage;
     margin: 0;
-    color: map-get($web_colors, "font_color");
+    color: get_color("font_color");
     font-family: $font_type;
 }
 header {
-    grid-row: 1;
-    grid-column: 1;
-    background-color: map-get($web_colors, "mid_blue" );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: $space;
+    @include set_grid_position(1, 1);
+    @include organizate_flex_container_elements(row, center, center, $space);
+    background-color: get_color("mid_blue");
 }
 h1 {
     margin: 0;
 }
-label {
-    display: flex;
-    flex-wrap: nowrap;
-}
-#task-input {
-    width: $max_percentage;
-}
 main {
-    grid-row: 2;
-    grid-column: 1;
+    @include set_grid_position(2, 1);
     padding: $space;
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     gap: $space;
 }
 form {
-    background-color: map-get($web_colors, "mid_blue" );
+    background-color: get_color("mid_blue");
     padding: $space;
     border-radius: $containers_radius;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    @include organizate_flex_container_elements(row, space-between, center, $space);
     gap: $space;
     height: fit-content;
+}
+#input-container {
+    @include flex(row);
+    gap: $space;
+    width: $input_percentage;
+}
+#task-input {
+    width: 90%;
 }
 p {
     margin: {
@@ -61,15 +55,14 @@ p {
     gap: $space;
     height: $max_percentage;
 }
-
 #no-iniciated {
-    @include tasks_container(map-get($web_colors, "dark_blue"), $containers_radius);
+    @include tasks_container("dark_blue");
 }
 #iniciated {
-    @include tasks_container(map-get($web_colors, "mid_blue"), $containers_radius);
+    @include tasks_container("mid_blue");
 }
 #finalizated {
-    @include tasks_container(map-get($web_colors, "light_blue"), $containers_radius);
+    @include tasks_container("light_blue");
 }
 #no-iniciated-tasks {
     @include task_container();
@@ -87,6 +80,9 @@ p {
 #add-task-button {
     @include button("add_button", "mid_blue");
 }
+#print-task-button {
+    @include button("font_color", "mid_blue");
+}
 .no-iniciated-task {
     @include task("mid_blue");
 }
@@ -97,15 +93,11 @@ p {
     @include task("dark_blue");
 }
 footer {
-    grid-row: 3;
-    grid-column: 1;
-    background-color: map-get($web_colors, "dark_blue");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: $footer_padding;
+    @include set_grid_position(3, 1);
+    background-color: get_color("dark_blue");
+    @include organizate_flex_container_elements(row, center, center, $footer_padding);
 }
 a {
-    color: map-get($web_colors, "font_color");
+    color: get_color("font_color");
     text-decoration: none;
 }

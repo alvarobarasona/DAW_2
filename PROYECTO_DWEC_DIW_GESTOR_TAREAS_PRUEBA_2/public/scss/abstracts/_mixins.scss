@@ -11,14 +11,18 @@
         color: get_color("font_color");
     }
 }
+// Mixing que establece las propiedades comunes en elementos tales como el color de fondo, el radio de los bordes, el padding, y la altura.
+@mixin setProperties($background_color) {
+    background-color: get_color($background_color);
+    border-radius: $containers_radius;
+    padding: $space;
+    width: $max_percentage;
+}
 // Mixing genérico para generar el estilo de las tareas en las columnas de tareas.
 @mixin task($task_background_color) {
-    background-color: get_color($task_background_color);
-    padding: $space;
-    border-radius: $containers_radius;
-    display: flex;
+    @include setProperties($task_background_color);
+    @include flex(row);
     justify-content: space-between;
-    width: $max_percentage;
     box-sizing: border-box;
     // Utilizo la función zip para combinar los dos arrays y luego los recorro simultáneamente con un @each.
     @each $task_type, $button_name in zip($task_types, $button_names) {
@@ -27,24 +31,41 @@
         }
     }
 }
-@mixin tasks_container($color, $radius) {
-    background-color: $color;
-    border-radius: $radius;
-    display: flex;
-    flex-direction: column;
+// Mixing que crea los diferentes contenedores de las tareas
+@mixin tasks_container($background_color) {
+    @include setProperties($background_color);
+    @include flex(column);
     align-items: center;
-    padding: $space;
-    width: $max_percentage;
     height: fit-content;
     gap: $space;
     h2 {
         margin: 0;
     }
 }
+
 @mixin task_container() {
     width: $max_percentage;
-    display: flex;
+    @include flex(row);
     flex-direction: column;
     gap: $space;
     align-items: center;
+}
+@mixin set_grid_position($row_position, $column_position) {
+    grid-row: $row_position;
+    grid-column: $column_position;
+}
+@mixin flex($flex_direction) {
+    display: flex;
+    flex-direction: $flex_direction;
+}
+@mixin organizate_flex_container_elements($flex_direction, $justify_content, $align_items, $padding) {
+    @include flex($flex_direction);
+    justify-content: $justify_content;
+    align-items: $align_items;
+    padding: $padding;
+}
+@mixin responsive($extent) {
+    @media screen and (max-widht: $extent) {
+        @content;
+    }
 }

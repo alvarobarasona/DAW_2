@@ -13,99 +13,30 @@
         </header>
         <main>
             <form action="">
-                <label for="task-input">Nueva Tarea:</label>
-                <input type="text" name="task-name" id="task-input" required>
+                <div id="input-container">
+                    <label for="task-input">Nueva Tarea:</label>
+                    <input type="text" name="task-name" id="task-input" required>
+                </div>
                 <button type="submit" id="add-task-button" onclick="addTask()">Añadir</button>
+                <button type="submit" id="print-task-button">Imprimir PDF</button>
             </form>
             <div id="type-tasks-container">             
                 <div id="no-iniciated">
                     <h2>No iniciadas</h2>
                     <div id="no-iniciated-tasks">
-                        <!-- <p>No hay tareas iniciadas</p> -->
-                        <!-- <div class="no-iniciated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div>
-                        <div class="no-iniciated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div> -->
+                       
                     </div>
                 </div>
                 <div id="iniciated">
                     <h2>Iniciadas</h2>
                     <div id="iniciated-tasks">
-                        <!-- <p>No hay tareas iniciadas</p> -->
-                        <!-- <div class="iniciated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div>
-                        <div class="iniciated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div> -->
+                      
                     </div>
                 </div>
                 <div id="finalizated">
                     <h2>Finalizadas</h2>
                     <div id="finalizated-tasks">
-                        <!-- <p>No hay tareas iniciadas</p> -->
-                        <!-- <div class="finalizated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div>
-                        <div class="finalizated-task">
-                            <div class="data-task">
-                                <span>Hacer la compra</span>
-                                <div>
-                                    <span>ID:</span>
-                                    <span>24545773</span>
-                                </div>
-                            </div>
-                            <button class="modify-task-button">Modificar</button>
-                            <button class="delete-task-button">Eliminar</button>
-                            <button class="move-task-button">Mover</button>
-                        </div> -->
+                       
                     </div>
                 </div>
             </div>

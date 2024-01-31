@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 html {
   height: 100%; }
+  @media screen and (max-widht: 320px) {
+    html {
+      height: 866px; } }
 
 body {
   display: grid;
@@ -17,21 +20,15 @@ body {
 header {
   grid-row: 1;
   grid-column: 1;
-  background-color: #0074D9;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  background-color: #0074D9; }
 
 h1 {
   margin: 0; }
-
-label {
-  display: flex;
-  flex-wrap: nowrap; }
-
-#task-input {
-  width: 100%; }
 
 main {
   grid-row: 2;
@@ -46,10 +43,21 @@ form {
   padding: 10px;
   border-radius: 8px;
   display: flex;
-  justify-content: left;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px;
   gap: 10px;
   height: fit-content; }
+
+#input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 85%; }
+
+#task-input {
+  width: 90%; }
 
 p {
   margin-top: 0;
@@ -63,11 +71,11 @@ p {
 #no-iniciated {
   background-color: #001F3F;
   border-radius: 8px;
+  padding: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  width: 100%;
   height: fit-content;
   gap: 10px; }
   #no-iniciated h2 {
@@ -76,11 +84,11 @@ p {
 #iniciated {
   background-color: #0074D9;
   border-radius: 8px;
+  padding: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  width: 100%;
   height: fit-content;
   gap: 10px; }
   #iniciated h2 {
@@ -89,11 +97,11 @@ p {
 #finalizated {
   background-color: #3dc8ff;
   border-radius: 8px;
+  padding: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  width: 100%;
   height: fit-content;
   gap: 10px; }
   #finalizated h2 {
@@ -102,6 +110,7 @@ p {
 #no-iniciated-tasks {
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-direction: column;
   gap: 10px;
   align-items: center; }
@@ -109,6 +118,7 @@ p {
 #iniciated-tasks {
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-direction: column;
   gap: 10px;
   align-items: center; }
@@ -116,6 +126,7 @@ p {
 #finalizated-tasks {
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-direction: column;
   gap: 10px;
   align-items: center; }
@@ -133,13 +144,23 @@ p {
   #add-task-button:hover {
     color: white; }
 
+#print-task-button {
+  color: white;
+  background-color: #0074D9;
+  border-style: none;
+  font-size: 20px;
+  cursor: pointer; }
+  #print-task-button:hover {
+    color: white; }
+
 .no-iniciated-task {
   background-color: #0074D9;
-  padding: 10px;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box; }
   .no-iniciated-task .modify-task-button {
     color: #ee8309;
@@ -168,11 +189,12 @@ p {
 
 .iniciated-task {
   background-color: #3dc8ff;
-  padding: 10px;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box; }
   .iniciated-task .modify-task-button {
     color: #ee8309;
@@ -201,11 +223,12 @@ p {
 
 .finalizated-task {
   background-color: #001F3F;
-  padding: 10px;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box; }
   .finalizated-task .modify-task-button {
     color: #ee8309;
@@ -237,6 +260,7 @@ footer {
   grid-column: 1;
   background-color: #001F3F;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 50px; }
