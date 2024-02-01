@@ -1,5 +1,0 @@
-@import "variables";
-// Devuelve el color introducido por parámetro del map que contiene los colores de la web.
-@function get_color($color_name) {
-    @return map-get($web_colors, $color_name);
-}
