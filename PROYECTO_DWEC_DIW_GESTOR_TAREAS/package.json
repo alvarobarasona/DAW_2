@@ -1,0 +1,12 @@
+{
+  "name": "task_gestor",
+  "version": "0.0.1",
+  "description": "Gestor de tareas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js && npm run open && npm run sass",
+    "sass": "sass --watch ./public/scss/style.scss:./public/css/style.css"
+  },
+  "author": "Alvaro",
+  "license": "ISC"
+}

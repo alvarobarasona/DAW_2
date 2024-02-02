@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+//Array con los colores de la web
+$web_colors: (
+    "background_color" : #001F3F,
+    "dark_blue" : rgb(0, 9, 37),
+    "mid_blue" : #0074D9,
+    "light_blue" : #3dc8ff,
+    "font_color" : white,
+    "add_button" : #7be700,
+    "modify_button" : #ee8309,
+    "delete_button" : #ff4538,
+    "move_button" : #a73be6
+);
+$space: 10px;
+$containers_radius: 8px;
+$font_type: 'PT Sans', sans-serif;

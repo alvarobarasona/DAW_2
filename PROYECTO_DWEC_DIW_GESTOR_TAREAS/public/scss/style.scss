@@ -1,0 +1,103 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+html {
+    height: $max_percentage;
+    @include responsive(320px) {height:866px}
+}
+body {
+    display: grid;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-columns: 1fr;
+    background-color: get_color("background_color");
+    height: $max_percentage;
+    margin: 0;
+    color: get_color("font_color");
+    font-family: $font_type;
+}
+header {
+    @include set_grid_position(1, 1);
+    @include organizate_flex_container_elements(row, center, center, $space);
+    background-color: get_color("mid_blue");
+}
+h1 {
+    margin: 0;
+}
+main {
+    @include set_grid_position(2, 1);
+    padding: $space;
+    @include flex(column);
+    gap: $space;
+}
+form {
+    background-color: get_color("mid_blue");
+    padding: $space;
+    border-radius: $containers_radius;
+    @include organizate_flex_container_elements(row, space-between, center, $space);
+    gap: $space;
+    height: fit-content;
+}
+#input-container {
+    @include flex(row);
+    gap: $space;
+    width: $input_percentage;
+}
+#task-input {
+    width: 90%;
+}
+p {
+    margin: {
+        top: 0;
+        bottom: $space;
+    }
+}
+#type-tasks-container {
+    display: flex;
+    gap: $space;
+    height: $max_percentage;
+}
+#no-iniciated {
+    @include tasks_container("dark_blue");
+}
+#iniciated {
+    @include tasks_container("mid_blue");
+}
+#finalizated {
+    @include tasks_container("light_blue");
+}
+#no-iniciated-tasks {
+    @include task_container();
+}
+#iniciated-tasks {
+    @include task_container();
+}
+#finalizated-tasks {
+    @include task_container();
+}
+.data-task {
+    display: flex;
+    gap: $space;
+}
+#add-task-button {
+    @include button("add_button", "mid_blue");
+}
+#print-task-button {
+    @include button("font_color", "mid_blue");
+}
+.no-iniciated-task {
+    @include task("mid_blue");
+}
+.iniciated-task {
+    @include task("light_blue");
+}
+.finalizated-task {
+    @include task("dark_blue");
+}
+footer {
+    @include set_grid_position(3, 1);
+    background-color: get_color("dark_blue");
+    @include organizate_flex_container_elements(row, center, center, $footer_padding);
+}
+a {
+    color: get_color("font_color");
+    text-decoration: none;
+}

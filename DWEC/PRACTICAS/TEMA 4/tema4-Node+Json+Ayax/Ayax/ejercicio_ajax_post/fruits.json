@@ -1,0 +1,19 @@
+{
+    "fruit" : [
+        {
+            "type" : "manzana",
+            "color": "rojo",
+            "weight" : 520
+        },
+        {
+            "type" : "pera",
+            "color": "verde",
+            "weight" : 455
+        },
+        {
+            "type" : "melón",
+            "color": "verde",
+            "weight" : 1200
+        }
+    ]
+}
