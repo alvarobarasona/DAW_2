@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class Product {
 	private String expireDate;

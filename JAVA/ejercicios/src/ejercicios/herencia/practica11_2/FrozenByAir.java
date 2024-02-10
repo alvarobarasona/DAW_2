@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class FrozenByAir extends Frozen{
 	private float nitrogenPercentage;
@@ -38,9 +38,7 @@ public class FrozenByAir extends Frozen{
 	}
 	@Override
 	public String toString() {
-		String frozenByAirInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
-		+ "\nFecha de envasado: " + getPackingDate() + "\nPaís de orígen: " + getOriginCountry()
-		+ "\nTemperatura de mantenimiento recomendada: " + getRecommendedHoldingTemperature()
+		String frozenByAirInfo = super.toString()
 		+ "\nPorcentaje de nitrógeno: " + nitrogenPercentage + "\nPorcentaje de oxígeno: " + oxigenPercentage
 		+ "\nPorcentaje de dióxido de carbono: " + carbonDioxidePercentage + "\nPorcentaje de vapor de agua: " + waterSteamPercentage;
 		return frozenByAirInfo;

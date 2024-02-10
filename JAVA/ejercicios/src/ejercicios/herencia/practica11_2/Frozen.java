@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class Frozen extends Fresh{
 	private float recommendedHoldingTemperature;
@@ -14,8 +14,7 @@ public class Frozen extends Fresh{
 	}
 	@Override
 	public String toString() {
-		String frozenInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
-		+ "\nFecha de envasado: " + getPackingDate() + "\nPaís de orígen: " + getOriginCountry()
+		String frozenInfo = super.toString()
 		+ "\nTemperatura de mantenimiento recomendada: " + recommendedHoldingTemperature;
 		return frozenInfo;
 	}

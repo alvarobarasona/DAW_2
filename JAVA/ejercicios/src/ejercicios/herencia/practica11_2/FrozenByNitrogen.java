@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class FrozenByNitrogen extends Frozen {
 	private String congelationMethod;
@@ -22,9 +22,7 @@ public class FrozenByNitrogen extends Frozen {
 	}
 	@Override
 	public String toString() {
-		String frozenByNitrogenInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
-		+ "\nFecha de envasado: " + getPackingDate() + "\nPaís de orígen: " + getOriginCountry()
-		+ "\nTemperatura de mantenimiento recomendada: " + getRecommendedHoldingTemperature()
+		String frozenByNitrogenInfo = super.toString()
 		+ "\nMétodo de congelación: " + congelationMethod + "\nSegundos de exposición al nitrógeno: " + secondsNitrogenExposure;
 		return frozenByNitrogenInfo;
 	}

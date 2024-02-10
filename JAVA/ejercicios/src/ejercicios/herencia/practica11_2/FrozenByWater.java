@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class FrozenByWater extends Frozen{
 	private float waterSalinity;
@@ -14,9 +14,7 @@ public class FrozenByWater extends Frozen{
 	}
 	@Override
 	public String toString() {
-		String frozenByWaterInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
-		+ "\nFecha de envasado: " + getPackingDate() + "\nPaís de orígen: " + getOriginCountry()
-		+ "\nTemperatura de mantenimiento recomendada: " + getRecommendedHoldingTemperature() + "\nGramos de sal por litro de agua: " + waterSalinity;
+		String frozenByWaterInfo = super.toString() + "\nGramos de sal por litro de agua: " + waterSalinity;
 		return frozenByWaterInfo;
 	}
 }

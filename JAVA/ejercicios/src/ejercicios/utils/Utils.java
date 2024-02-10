@@ -1,5 +1,6 @@
 package ejercicios.utils;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Utils {
@@ -8,7 +9,11 @@ public class Utils {
 	
 	public final static String LINE_BREAK = "\n";
 	
+	public final static int DEFAULT_VALUE_ZERO = 0;
 	public final static int DEFAULT_VALUE_ONE = 1;
+	public final static int DEFAULT_VALUE_TWO = 2;
+	public final static int DEFAULT_VALUE_THREE = 3;
+	public final static int DEFAULT_VALUE_FIVE = 5;
 	
 	public static String getString() {
 		String String = SC.nextLine();
@@ -21,13 +26,13 @@ public class Utils {
 		return menuString;
 	}
 	
-	public static int isNumber() {
+	public static int isNumber(String text) {
 		Integer number = null;
 		do {
 			try {
 				number = Integer.parseInt(SC.nextLine());
 			} catch(NumberFormatException nfe) {
-				System.out.println("Caracter incorrecto\n");
+				System.out.printf("Caracter incorrecto. %s\n", text);
 			}
 		} while(number == null);
 		return number;
@@ -35,7 +40,7 @@ public class Utils {
 	
 	public static int getMenuNumberOption(String text) {
 		System.out.println(text);
-		int menuOption = isNumber();
+		int menuOption = isNumber(text);
 		return menuOption;
 	}
 	
@@ -87,5 +92,22 @@ public class Utils {
 			menuDoubleNumberOptionGreaterThanMinimumAndLesserThanMaximum = getMenuDoubleNumberOptionGreaterThanMinimum(text, minimum);
 		} while(menuDoubleNumberOptionGreaterThanMinimumAndLesserThanMaximum < minimum || menuDoubleNumberOptionGreaterThanMinimumAndLesserThanMaximum > maximum);
 		return menuDoubleNumberOptionGreaterThanMinimumAndLesserThanMaximum;
+	}
+	
+	public static void showTitle(final String MENU_OPTION) {
+		System.out.printf("%s\n\r", MENU_OPTION);
+	}
+	
+	public static void getFarewellString() {
+		String farwellString;
+		Date actualDate = new Date();
+		if(actualDate.getHours() < 6) {
+			farwellString = "¡Hasta luego! Que tengas buena noche.".concat(Utils.LINE_BREAK);
+		} else if(actualDate.getHours() >= 6 && actualDate.getHours() < 12) {
+			farwellString = "¡Hasta luego! Que tengas buena mañana.".concat(Utils.LINE_BREAK);
+		} else {
+			farwellString = "¡Hasta luego! Que tengas buena tarde.".concat(Utils.LINE_BREAK);
+		}
+		System.out.print(farwellString);
 	}
 }

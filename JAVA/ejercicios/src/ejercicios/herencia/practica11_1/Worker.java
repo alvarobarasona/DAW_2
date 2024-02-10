@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio1;
+package ejercicios.herencia.practica11_1;
 
 public class Worker extends Person {
 	private String profesionalCategory;

@@ -50,17 +50,8 @@ public class Main {
 					currentCount.showDataAndModify();
 					break;
 				case 5:
-					String farwellString;
-					Date actualDate = new Date();
-					System.out.println(actualDate.getHours());
-					if(actualDate.getHours() < 6) {
-						farwellString = "¡Hasta luego! Que tengas buena noche.".concat(Utils.LINE_BREAK);
-					} else if(actualDate.getHours() >= 6 && actualDate.getHours() < 12) {
-						farwellString = "¡Hasta luego! Que tengas buena mañana.".concat(Utils.LINE_BREAK);
-					} else {
-						farwellString = "¡Hasta luego! Que tengas buena tarde.".concat(Utils.LINE_BREAK);
-					}
-					System.out.println(farwellString);
+					Utils.getFarewellString();
+					
 				default:
 					break;
 			}

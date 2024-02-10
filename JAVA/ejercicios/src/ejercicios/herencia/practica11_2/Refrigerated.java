@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class Refrigerated extends Frozen{
 	private String foodSupervisionAgencyCode;
@@ -14,9 +14,7 @@ public class Refrigerated extends Frozen{
 	}
 	@Override
 	public String toString() {
-		String refrigeratedInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
-		+ "\nFecha de envasado: " + getPackingDate() + "\nPaís de orígen: " + getOriginCountry()
-		+ "\nTemperatura de mantenimiento recomendada: " + getRecommendedHoldingTemperature()
+		String refrigeratedInfo = super.toString()
 		+ "\nCódigo de organismo de supervisión alimentaria: " + foodSupervisionAgencyCode;
 		return refrigeratedInfo;
 	}

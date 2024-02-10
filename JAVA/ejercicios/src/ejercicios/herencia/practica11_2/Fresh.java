@@ -1,4 +1,4 @@
-package ejercicios.herencia.ejercicio2;
+package ejercicios.herencia.practica11_2;
 
 public class Fresh extends Product{
 	private String packingDate;
@@ -22,7 +22,7 @@ public class Fresh extends Product{
 	}
 	@Override
 	public String toString() {
-		String freshInfo = "Fecha de caducidad: " + getExpireDate() + "\nNúmero de lote: " + getLotNumber()
+		String freshInfo = super.toString()
 		+ "\nFecha de envasado: " + packingDate + "\nPaís de orígen: " + originCountry;
 		return freshInfo;
 	}
