@@ -189,4 +189,8 @@ main {
   display: flex;
   justify-content: center; }
 
+a {
+  color: white;
+  text-decoration: none; }
+
 /*# sourceMappingURL=style.css.map */
