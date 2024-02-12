@@ -1,0 +1,9 @@
+@import "variables";
+
+@function get_measure($measure_name) {
+    @return map-get($page_measurements, $measure_name);
+}
+
+@function get_color($color_name) {
+    @return map-get($web_colors, $color_name);
+}

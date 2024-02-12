@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Guardias</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestor de Guardias del Profesorado</h1>
+      <button id="logout-button">Cerrar Sesión</button>
+      <button id="eliminar-todas-guardias">Borrar guardias</button>
+    </header>
+    <main>
+      <div id="calendar-container">
+        <div id="calendar-header">
+          <span id="month-year">Marzo 2024</span>
+        </div>
+        <div id="week-selector">
+          <button class="button prev">&#10094;</button>
+          <span id="week">Semana 1</span>
+          <button class="button next">&#10095;</button>
+        </div>
+        <table id="calendar">
+          <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div id="resumen-disponibilidad"></div>
+
+      <div id="profesores-panel"></div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Instituto XYZ</p>
+    </footer>
+
+  <script src="js/horarios.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+  </body>
+</html>
+

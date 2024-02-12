@@ -1,0 +1,192 @@
+html {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #001F3F;
+  color: white; }
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15%;
+  background-color: #0074D9;
+  text-align: center;
+  padding: 20px; }
+
+footer {
+  background-color: #0074D9;
+  text-align: center;
+  padding: 20px; }
+
+h1 {
+  margin: 0; }
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  height: 85%;
+  box-sizing: border-box;
+  gap: 20px; }
+
+#calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #3dc8ff;
+  border: 1px solid white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0; }
+
+#week-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 1px solid white;
+  border-right: 1px solid white; }
+  #week-selector .button {
+    color: white;
+    border: 1px solid white;
+    background-color: #0074D9;
+    border-radius: 4px; }
+  #week-selector .button:hover {
+    background-color: #001F3F; }
+
+#calendar-container {
+  width: 80%;
+  box-sizing: border-box; }
+
+#calendar {
+  width: 100%;
+  height: 80%;
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-collapse: collapse; }
+  #calendar thead {
+    background-color: #0074D9; }
+  #calendar td {
+    height: 71.48px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid white; }
+    #calendar td .guardia-buttons {
+      display: none; }
+    #calendar td:hover .guardia-buttons {
+      display: block; }
+  #calendar th {
+    border: 1px solid white;
+    text-align: center;
+    padding: 8px; }
+  #calendar tr {
+    background-color: #001F3F; }
+  #calendar tr:nth-child(even) {
+    background-color: #0074D9; }
+
+#profesores-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #0074D9;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 4px; }
+
+.profesor {
+  background-color: #001F3F;
+  padding: 10px;
+  border: 1px solid white; }
+  .profesor:hover {
+    color: #001F3F;
+    background-color: #3dc8ff; }
+
+.edit-btn {
+  color: white;
+  background-color: #3dc8ff;
+  border: 1px solid white;
+  border-radius: 4px; }
+  .edit-btn:hover {
+    color: #3dc8ff;
+    background-color: #001F3F; }
+
+.delete-btn {
+  color: white;
+  background-color: #3dc8ff;
+  border: 1px solid white;
+  border-radius: 4px; }
+  .delete-btn:hover {
+    color: #3dc8ff;
+    background-color: #001F3F; }
+
+#logout-button {
+  color: white;
+  background-color: #3dc8ff;
+  border: 1px solid white;
+  border-radius: 4px; }
+  #logout-button:hover {
+    color: #3dc8ff;
+    background-color: #001F3F; }
+
+#eliminar-todas-guardias {
+  color: white;
+  background-color: #3dc8ff;
+  border: 1px solid white;
+  border-radius: 4px; }
+  #eliminar-todas-guardias:hover {
+    color: #3dc8ff;
+    background-color: #001F3F; }
+
+#login-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; }
+  #login-body input {
+    margin: 10px 0;
+    padding: 10px; }
+  #login-body button {
+    color: white;
+    background-color: #3dc8ff;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer; }
+    #login-body button:hover {
+      color: #3dc8ff;
+      background-color: #001F3F; }
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px; }
+
+#index-header {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+#index-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+/*# sourceMappingURL=style.css.map */

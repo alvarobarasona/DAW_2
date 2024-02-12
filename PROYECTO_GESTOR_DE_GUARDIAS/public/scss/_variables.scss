@@ -1,0 +1,27 @@
+$font_family: Arial, sans-serif;
+
+$default_value_zero: 0;
+
+$table_border: 1px solid white;
+
+$page_measurements: (
+    "containers_padding" : 10px,
+    "header_footer_padding" : 20px,
+    "main_height" : 85%,
+    "max_percentage" : 100%,
+    "header_font_size" : 18px,
+    "week_selector_font_size" : 16px,
+    "selector_buttons_radius" : 4px,
+    "eighty_percentage" : 80%,
+    "row_padding" : 8px,
+    "teachers_panel_width" : 20%,
+    "td_min_height" : 71.48px,
+    "header_gap" : 15%
+);
+
+$web_colors: (
+    "bgc_1" : #001F3F,
+    "bgc_2" : #0074D9,
+    "font_color" : white,
+    "altern_bgc" : #3dc8ff
+);

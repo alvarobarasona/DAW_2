@@ -1,0 +1,32 @@
+{
+    "usuarios": [
+      {
+        "username": "admin",
+        "password": "adminPassword",
+        "role": "admin"
+      },
+      {
+        "profesorId": "profesor1",
+        "username": "profesor1",
+        "password": "password1",
+        "role": "profesor",
+        "disponibilidad": ["L-1", "M-4", "X-2"]
+        
+      },
+      {
+        "profesorId": "profesor2",
+        "username": "profesor2",
+        "password": "password2",
+        "role": "profesor",
+        "disponibilidad": ["L-5", "M-6", "X-5"]
+      },
+      {
+        "profesorId": "profesor3",
+        "username": "profesor3",
+        "password": "password3",
+        "role": "profesor",
+        "disponibilidad": ["L-3", "M-3", "X-3"]
+      }
+    ]
+  }
+  
