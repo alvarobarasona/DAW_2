@@ -1,0 +1,2 @@
+Ejercicio 5: Crear una aplicación web con Express y JSON, que añada nuevos datos a un
+fichero de datos.json, NO LOS SOBREESCRIBA. 
