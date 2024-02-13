@@ -1,3 +1,14 @@
 {
-  "guardias": []
+  "guardias": [
+    {
+      "profesorId": "profesor1",
+      "celdaId": "L-1",
+      "descripcion": "aaaa"
+    },
+    {
+      "profesorId": "profesor1",
+      "celdaId": "M-2",
+      "descripcion": "bbbb"
+    }
+  ]
 }

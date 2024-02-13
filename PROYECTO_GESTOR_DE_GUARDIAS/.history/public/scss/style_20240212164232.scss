@@ -1,0 +1,213 @@
+@import "variables";
+@import "methods";
+
+html {
+    height: get_measure("max_percentage");
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: get_measure("max_percentage");
+    font-family: $font_family;
+    margin: $default_value_zero;
+    background-color: get_color("bgc_1");
+    color: get_color("font_color");
+}
+
+header {
+    display: flex;
+    justify-content:flex-end;
+    gap: get_measure("header_gap");
+    background-color: get_color("bgc_2");
+    text-align: center;
+    padding: get_measure("header_footer_padding");
+}
+
+footer {
+    background-color: get_color("bgc_2");
+    text-align: center;
+    padding: get_measure("header_footer_padding");
+}
+
+h1 {
+    margin: $default_value_zero;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: get_measure("header_footer_padding");
+    height: get_measure("main_height");
+    box-sizing: border-box;
+    gap: get_measure("header_footer_padding");
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: get_measure()get_measure("header_footer_padding");
+    background-color: get_color("altern_bgc");
+    border: $table_border;
+    font-size: get_measure("header_font_size");
+    font-weight: bold;
+    border-radius: get_measure("selector_buttons_radius") get_measure("selector_buttons_radius") 0 0;
+}
+
+#week-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: get_measure("containers_padding");
+    padding: get_measure("containers_padding");
+    font-size: get_measure("week_selector_font_size");
+    font-weight: bold;
+    border-left: $table_border;
+    border-right: $table_border;
+    .button {
+        color: get_color("font_color");
+        border: $table_border;
+        background-color: get_color("bgc_2");
+        border-radius: get_measure("selector_buttons_radius");
+    }
+    .button:hover {
+        background-color: get_color("bgc_1");
+    }
+}
+
+#calendar-container {
+    width: get_measure("eighty_percentage");
+    box-sizing: border-box;
+}
+
+#calendar {
+    width: get_measure("max_percentage");
+    height:get_measure("eighty_percentage");
+    box-sizing: border-box;
+    height: get_measure("max_percentage");
+    border: $table_border;
+    border-collapse: collapse;
+    thead {
+        background-color: get_color("bgc_2");
+    }
+    td {
+        height: get_measure("td_min_height");
+        padding: get_measure("containers_padding");
+        text-align: center;
+        border: $table_border;
+        .guardia-buttons {
+            display: none;
+        }
+        &:hover {
+            .guardia-buttons {
+                display: block;
+            }
+        }
+    }
+    th {
+        border: $table_border;
+        text-align: center;
+        padding: get_measure("row_padding");
+    }
+    tr {
+        background-color: get_color("bgc_1");
+    }
+    tr:nth-child(even) {
+        background-color: get_color("bgc_2");
+    }
+}
+
+#profesores-panel {
+    display: flex;
+    flex-direction: column;
+    gap: get_measure("containers_padding");
+    padding: get_measure("containers_padding");
+    background-color: get_color("bgc_2");
+    width: get_measure("teachers_panel_width");
+    border: $table_border;
+    border-radius: get_measure("selector_buttons_radius");
+}
+
+.profesor {
+    background-color: get_color("bgc_1");
+    padding: get_measure("containers_padding");
+    border: $table_border;
+    &:hover {
+        color: get_color("bgc_1");
+        background-color: get_color("altern_bgc");
+    }
+}
+
+@mixin buttons($text_color, $bg_color, $hover_text_color, $hover_bg_color) {
+    color: get_color($text_color);
+    background-color: get_color($bg_color);
+    border: $table_border;
+    border-radius: get_measure("selector_buttons_radius");
+    &:hover {
+        color: get_color($hover_text_color);
+        background-color: get_color($hover_bg_color);
+    }
+}
+
+.edit-btn {
+    @include buttons("font_color", "altern_bgc", "altern_bgc", "bgc_1");
+}
+
+.delete-btn {
+    @include buttons("font_color", "altern_bgc", "altern_bgc", "bgc_1");
+}
+
+#logout-button {
+    @include buttons("font_color", "altern_bgc", "altern_bgc", "bgc_1");
+}
+
+#eliminar-todas-guardias {
+    @include buttons("font_color", "altern_bgc", "altern_bgc", "bgc_1");
+}
+
+#login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    height: 100vh;
+    input {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    button {
+        @include buttons("font_color", "altern_bgc", "altern_bgc", "bgc_1");
+        margin: 10px 0;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loginForm {
+    display: flex; flex-direction: column; width: 300px;
+}
+
+#index-header {
+    width: get_measure("max_percentage");
+    display: flex;
+    justify-content: center;
+}
+
+#index-footer {
+    width: get_measure("max_percentage");
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

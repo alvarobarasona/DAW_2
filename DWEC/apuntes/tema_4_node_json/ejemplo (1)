@@ -1,0 +1,37 @@
+CLIENTE:
+
+    const inputCiudad = document.getElementById('inputCiudad');
+
+    const xmlhr = new XMLHttpRequest();
+    xmlhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const ciudades= JSON.parse(xmlhr.responseText);
+
+        const resultado = document.getElementById('resultado');
+        resultado.innerHTML = '';
+
+        ciudades.forEach(ciudad => {
+          const elementos = document.createElement('li');
+          elementos.textContent = ciudad.nombre;
+          resultado.appendChild(elementos);
+        });
+      }
+    };
+
+    xmlhr.open('POST', '/consultarCiudades', true);
+    xmlhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xmlhr.send(JSON.stringify({ dosLetras: dosLetras }));
+  }
+
+
+SERVIDOR:
+
+app.post('/consultarCiudades', (req, res) => {
+  const dosLetras = req.body.dosLetras.toLowerCase();
+  const ciudadesJSON = require('tu_archivo.json'); 
+  const ciudadesCoincidentes = ciudadesJSON.filter(ciudad => {
+    const nombreCiudad = ciudad.nombre.toLowerCase();
+    return nombreCiudad.includes(dosLetras);
+  });
+  res.json(ciudadesCoincidentes);
+});

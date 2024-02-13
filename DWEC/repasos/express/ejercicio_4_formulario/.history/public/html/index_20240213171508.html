@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario</title>
+    </head>
+    <body>
+        <h1>Formulario de Registro</h1>
+        <form action="/formulary" method="POST">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="mail">Correo:</label>
+                <input type="email" name="mail" id="mail">
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <input type="submit" value="Registrarse">
+        </form>
+    </body>
+</html>
