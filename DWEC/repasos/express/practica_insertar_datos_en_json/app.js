@@ -6,6 +6,7 @@ const fs = require("fs");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
@@ -31,7 +32,9 @@ app.post("/insertdata", (req, res) => {
             res.status(500).send("Error al parsear el JSON como array");
             return;
         }
+        console.log("Body:", req.body);
         const newWord = req.body['wordinput'];
+        console.log("New Word:", newWord);
         dataArray.push({ word: newWord });
         const updatedWords = JSON.stringify(dataArray, null, 2);
         fs.writeFile(path.join(__dirname, "data", "data.json"), updatedWords, (err) => {
@@ -39,7 +42,7 @@ app.post("/insertdata", (req, res) => {
                 res.status(500).send("Error al escribir el JSON");
                 return;
             }
-            res.send("Mensaje guardado con éxito");
+            res.sendFile(path.join(__dirname, "public", "index.html"));
         });
     });
 });
