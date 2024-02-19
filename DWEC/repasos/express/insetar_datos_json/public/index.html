@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Añadir personas a JSON</title>
+    </head>
+    <body>
+        <h1>Añadir personas a JSON</h1>
+        <form action="/insertperson" method="post">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="surname">Apellido:</label>
+                <input type="text" name="surname" id="surname" required>
+            </div>
+            <div>
+                <label for="age">Edad:</label>
+                <input type="text" name="age" id="age" required>
+            </div>
+            <input type="submit" value="Añadir">
+        </form>
+    </body>
+</html>

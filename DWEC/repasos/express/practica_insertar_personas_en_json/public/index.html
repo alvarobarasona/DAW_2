@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insterta palabras en JSON</title>
+        <script src="/public/client.js" defer></script>
+    </head>
+    <body>
+        <h1>Insterta personas en JSON</h1>
+        <form>
+            <div>
+                <label for="nifinput">DNI:</label>
+                <input type="text" name="nifinput" id="nifinput" required>
+            </div>
+            <div>
+                <label for="nameinput">Nombre:</label>
+                <input type="text" name="nameinput" id="nameinput" required>
+            </div>
+            <div>
+                <label for="firstsurnameinput">Primer apellido:</label>
+                <input type="text" name="firstsurnameinput" id="firstsurnameinput" required>
+            </div>
+            <div>
+                <label for="secondsurnameinput">Segundo apellido:</label>
+                <input type="text" name="secondsurnameinput" id="secondsurnameinput" required>
+            </div>
+            <div>
+                <label for="ageinput">Año:</label>
+                <input type="text" name="ageinput" id="ageinput" required>
+            </div>
+            <div>
+                <label for="sexinput">Sexo:</label>
+                <input type="text" name="sexinput" id="sexinput" required>
+            </div>
+           <button id="add-person-button">Añadir</button>
+        </form>
+        <!-- <form action="/deleteperson" method="delete">
+            <input type="submit" value="Eliminar persona">
+        </form> -->
+        <div id="people-container"></div>
+    </body>
+</html>
