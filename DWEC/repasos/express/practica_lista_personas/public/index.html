@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editor de personas</title>
+        <script src="/public/client.js" defer></script>
+    </head>
+    <body>
+        <h1>Editor de personas</h1>
+        <form>
+            <div>
+                <label for="nif">NIF:</label>
+                <input type="text" id="nif" required>
+            </div>
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="first-surname">Primer apellido:</label>
+                <input type="text" id="first-surname" required>
+            </div>
+            <div>
+                <label for="second-surname">Segundo apellido:</label>
+                <input type="text" id="second-surname" required>
+            </div>
+            <div>
+                <label for="age">Edad:</label>
+                <input type="text" id="age" required>
+            </div>
+            <div>
+                <label for="sex">Sexo:</label>
+                <input type="text" id="sex" required>
+            </div>
+            <button id="add-person-button">Añadir</button>
+        </form>
+        <div id="people-container">
+            <!-- Aquí se van a generar las personas del JSON -->
+        </div>
+    </body>
+</html>
