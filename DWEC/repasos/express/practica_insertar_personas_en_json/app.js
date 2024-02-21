@@ -3,7 +3,6 @@ const app = express();
 const port = 3000;
 const path = require("path");
 const fs = require("fs");
-const { error } = require("console");
 const valueOne = 1;
 const valueZero = 0;
 let updatedPersons;

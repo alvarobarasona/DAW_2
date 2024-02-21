@@ -85,7 +85,7 @@ function addPersonToDom(person) {
   deleteButton.addEventListener("click", () => {
     deletePerson(person.nif);
   });
-  modifyButton.addEventListener("click", () => {
-    modifyPerson(person.nif);
-  });
+  // modifyButton.addEventListener("click", () => {
+  //   modifyPerson(person.nif);
+  // });
 }
