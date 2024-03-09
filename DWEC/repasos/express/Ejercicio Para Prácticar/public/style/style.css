@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px; }
+
+ul {
+  list-style: none; }
+
+.header {
+  color: white;
+  font-size: 36px;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between; }
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 20px; }
+
+.botones button {
+  border-radius: 12px;
+  padding: 5px;
+  margin: 5px;
+  width: auto;
+  height: auto;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  cursor: pointer; }
+  .botones button:hover {
+    background-color: #830083; }
+
+.container {
+  margin-top: 10%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 50px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center; }
+
+.titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 20px; }
+
+.contenido {
+  width: 90%;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 60vh; }
+
+body {
+  background-color: pink; }
+  body .header {
+    background-color: #2c4fc2;
+    color: white; }
+  body .titulo {
+    color: black; }
+  body #pendientes .titulo {
+    background-color: #e744da; }
+  body #pendientes .contenido {
+    background-color: #f39eec; }
+  body #vistas .titulo {
+    background-color: #fff12d; }
+  body #vistas .contenido {
+    background-color: #fff893; }
+  body #favoritas .titulo {
+    background-color: #008037; }
+  body #favoritas .contenido {
+    background-color: #00e663; }
+  body #no-recomen .titulo {
+    background-color: #4b6cfe; }
+  body #no-recomen .contenido {
+    background-color: #b0bfff; }
+
+body .oscuro {
+  background-color: black; }
+  body .oscuro .header {
+    background-color: #2c4fc3;
+    color: white; }
+  body .oscuro .titulo {
+    color: black; }
+  body .oscuro #pendientes .titulo {
+    background-color: #e744da; }
+  body .oscuro #pendientes .contenido {
+    background-color: #f39eec; }
+  body .oscuro #vistas .titulo {
+    background-color: #fff12d; }
+  body .oscuro #vistas .contenido {
+    background-color: #fff893; }
+  body .oscuro #favoritas .titulo {
+    background-color: #008037; }
+  body .oscuro #favoritas .contenido {
+    background-color: #00e663; }
+  body .oscuro #no-recomen .titulo {
+    background-color: #4b6cfe; }
+  body .oscuro #no-recomen .contenido {
+    background-color: #b0bfff; }
+
+/*# sourceMappingURL=style.css.map */

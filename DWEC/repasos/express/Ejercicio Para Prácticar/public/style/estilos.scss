@@ -1,0 +1,193 @@
+//Variables
+$header-color: #2c4fc2;
+$title-color: white;
+$font-style: Arial, sans-serif;
+$title-size: 36px;
+$category-title-size: 18px;
+$color-botones: purple;
+$pendientes: rgb(231, 68, 218);
+$vistas: rgb(255, 241, 45);
+$favoritas: rgb(0, 128, 55);
+$no-reco: rgb(75, 108, 254);
+//Mixins
+@mixin bordes-redondeados{
+  border-radius: 12px;
+}
+
+@mixin centrar-flex{
+  align-items: center;
+  align-content: center;
+}
+@mixin espaciado-lateral{
+  margin-right: 20px;
+  margin-left:20px;
+}
+
+//Estilos generales
+body {
+  font-family: $font-style;
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  color: $title-color;
+  font-size: $title-size; 
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.botones{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.botones button{
+  @include bordes-redondeados;
+  padding: 5px;
+  margin: 5px;
+  width: auto;
+  height: auto;
+  background-color: $color-botones;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    background-color: lighten($color-botones,0.5);
+  }
+}
+
+.container {
+  margin-top: 10%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 50px;
+  padding: 20px;
+  justify-content: space-between;
+  @include centrar-flex;
+}
+
+.titulo {
+  font-size: $category-title-size;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  @include espaciado-lateral();
+}
+
+.contenido {
+  width: 90%;
+  @include espaciado-lateral();
+  @include bordes-redondeados();
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+}
+
+
+body{
+background-color: pink;
+
+.header {
+  background-color: $header-color;
+  color:white;
+}
+
+.titulo {
+  color : black;
+}
+
+#pendientes .titulo{
+  background-color: $pendientes;
+}
+
+#pendientes .contenido {
+  background-color: lighten($pendientes, 20%);
+}
+
+#vistas .titulo {
+  background-color: $vistas;
+}
+
+#vistas .contenido {
+  background-color: lighten($vistas, 20%);
+}
+
+#favoritas .titulo {
+  background-color: $favoritas;
+}
+
+#favoritas .contenido {
+  background-color: lighten($favoritas, 20%);
+}
+
+#no-recomen .titulo {
+  background-color: $no-reco;
+}
+
+#no-recomen .contenido {
+  background-color: lighten($no-reco, 20%);
+}
+}
+
+body .oscuro{
+  background-color: rgb(0, 0, 0);
+
+.header {
+  background-color: lighten($header-color,0.2);
+  color:white;
+}
+
+.titulo {
+  color : black;
+}
+
+#pendientes .titulo{
+  background-color: $pendientes;
+}
+
+#pendientes .contenido {
+  background-color: lighten($pendientes, 20%);
+}
+
+#vistas .titulo {
+  background-color: $vistas;
+}
+
+#vistas .contenido {
+  background-color: lighten($vistas, 20%);
+}
+
+#favoritas .titulo {
+  background-color: $favoritas;
+}
+
+#favoritas .contenido {
+  background-color: lighten($favoritas, 20%);
+}
+
+#no-recomen .titulo {
+  background-color: $no-reco;
+}
+
+#no-recomen .contenido {
+  background-color: lighten($no-reco, 20%);
+}
+}

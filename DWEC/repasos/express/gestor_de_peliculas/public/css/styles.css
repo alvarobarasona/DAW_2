@@ -1,0 +1,114 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #fff;
+  color: #1865ae;
+  margin: 0; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1865ae; }
+  header h1 {
+    margin: 0;
+    color: black;
+    flex-grow: 1; }
+  header .theme-switcher {
+    display: flex;
+    gap: 10px; }
+  header button {
+    background-color: #f7cac9;
+    color: #a81c19;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; }
+    header button:hover {
+      background-color: #f09e9d; }
+
+.movie-list {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  color: #000; }
+
+.movie-list-pending {
+  background-color: #6b5b95; }
+
+.movie-list-watched {
+  background-color: #ffef61; }
+
+.movie-list-favorites {
+  background-color: #88b04b; }
+
+.movie-list-not-recommended {
+  background-color: #1865ae; }
+
+.dark-mode {
+  background-color: #222;
+  color: #fff; }
+  .dark-mode h1 {
+    color: #fff; }
+  .dark-mode button {
+    background-color: #eb7d7b;
+    color: #fff; }
+  .dark-mode .movie-list {
+    background-color: #151515;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  .dark-mode .movie-list-pending {
+    background-color: #7c60c6;
+    color: #f7f6f9; }
+  .dark-mode .movie-list-watched {
+    background-color: #fff281;
+    color: white; }
+  .dark-mode .movie-list-favorites {
+    background-color: #a4d45b;
+    color: #fdfefc; }
+  .dark-mode .movie-list-not-recommended {
+    background-color: #1b85ea;
+    color: #cde3f8; }
+
+.color-1 {
+  background-color: #34568b;
+  color: black; }
+
+.color-2 {
+  background-color: #ff6f61;
+  color: #610900; }
+
+.color-3 {
+  background-color: #88b04b;
+  color: black; }
+
+.color-4 {
+  background-color: #f7cac9;
+  color: #a81c19; }
+
+.color-5 {
+  background-color: #92a8d1;
+  color: #1e2c46; }
+
+.color-6 {
+  background-color: #955251;
+  color: black; }
+
+.color-7 {
+  background-color: #b565a7;
+  color: #120911; }
+
+.color-8 {
+  background-color: #009b77;
+  color: black; }
+
+.color-9 {
+  background-color: #dd4124;
+  color: #020000; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "username": "boss",
+      "password": "1234",
+      "nombre": "Boss",
+      "peliculas": {
+        "pendientes": [
+          "CREED II"
+        ],
+        "vistas": [
+          "John Wick 4",
+          "F&F 2"
+        ],
+        "favoritas": [
+          "F&F 1",
+          "Scarface: El precio del poder"
+        ],
+        "no_recomendadas": [
+          "startrek"
+        ]
+      }
+    },
+    {
+      "username": "le_admin",
+      "password": "1234",
+      "nombre": "José Luis uTorrent",
+      "peliculas": {
+        "pendientes": [],
+        "vistas": [],
+        "favoritas": [],
+        "no_recomendadas": []
+      }
+    },
+    {
+      "username": "nuri",
+      "password": "22",
+      "nombre": "Nuria",
+      "peliculas": {
+        "pendientes": [],
+        "vistas": [],
+        "favoritas": [],
+        "no_recomendadas": []
+      }
+    }
+  ]
+}

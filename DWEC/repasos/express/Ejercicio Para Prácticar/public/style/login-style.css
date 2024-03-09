@@ -1,0 +1,47 @@
+.formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+  width: 300px; }
+  .formulario label, .formulario button {
+    margin-right: 20px;
+    margin-left: 20px; }
+  .formulario label {
+    display: block;
+    margin-bottom: 5px; }
+  .formulario input[type="text"],
+  .formulario input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 12px; }
+  .formulario button {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px; }
+    .formulario button:hover {
+      background-color: #e600e6; }
+
+a {
+  color: purple;
+  text-decoration: none;
+  font-weight: bold; }
+  a:hover {
+    text-decoration: underline; }
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: pink; }
+
+/*# sourceMappingURL=login-style.css.map */

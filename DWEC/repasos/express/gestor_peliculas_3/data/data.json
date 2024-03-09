@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "name": "pepe",
+      "userId": "us-1",
+      "password": "123a",
+      "movies": [
+        {
+          "title": "peter pan",
+          "category": "favourites"
+        },
+        {
+          "title": "pulaman",
+          "category": "pending"
+        }
+      ]
+    },
+    {
+      "name": "maria",
+      "userId": "us-2",
+      "password": "456b",
+      "movies": [
+        {
+          "title": "Avatar",
+          "category": "favourites"
+        },
+        {
+          "title": "Ciudadano Ejemplar",
+          "category": "pending"
+        },
+        {
+          "title": "Star Trek",
+          "category": "no-recomendated"
+        }
+      ]
+    }
+  ]
+}

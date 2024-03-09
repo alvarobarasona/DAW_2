@@ -1,0 +1,10 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+#container-1 {
+    @include container_style($background_color1, $font_color1, $font_size1, $border_container1);
+}
+
+#container-2 {
+    @include container_style($background_color2, $font_color2, $font_size2, $border_container2);
+}

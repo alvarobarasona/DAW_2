@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de películas | inicio</title>
+        <script src="./js/login.js" defer></script>
+        <style>
+            html {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Gestor de películas</h1>
+        </header>
+        <main>
+            <form>
+                <div>
+                    <label for="user-name-input">Usuario:</label>
+                    <input type="text" id="user-name-input" required>
+                </div>
+                <div>
+                    <label for="password-input">Contraseña:</label>
+                    <input type="password" id="password-input" required>
+                </div>
+                <button id="login-button">Iniciar sesión</button>
+            </form>
+        </main>
+    </body>
+</html>

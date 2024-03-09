@@ -1,0 +1,82 @@
+// Definición de variables y mixins
+$header-color: #2c4fc2;
+$title-color: white;
+$font-style: Arial, sans-serif;
+$title-size: 36px;
+$category-title-size: 18px;
+$color-botones: purple;
+$pendientes: rgb(231, 68, 218);
+$vistas: rgb(255, 241, 45);
+$favoritas: rgb(0, 128, 55);
+$no-reco: rgb(75, 108, 254);
+
+@mixin bordes-redondeados {
+  border-radius: 12px;
+}
+
+@mixin centrar-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin espaciado-lateral {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+// Aplicación de estilos al formulario de registro
+.formulario {
+  @include centrar-flex;
+  @include bordes-redondeados;
+  background-color: $title-color;
+  padding: 20px;
+  width: 300px;
+
+  label, button {
+    @include espaciado-lateral;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 40px); // Ajuste por el padding y espaciado lateral
+    padding: 10px;
+    margin-bottom: 15px;
+    @include bordes-redondeados;
+  }
+
+  button {
+    background-color: $color-botones;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    @include bordes-redondeados;
+
+    &:hover {
+      background-color: lighten($color-botones, 20%);
+    }
+  }
+}
+a{
+  color: $color-botones;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Estilos generales, si necesitas aplicar ajustes basados en tus variables y mixins
+body {
+  font-family: $font-style;
+  @include centrar-flex;
+  height: 100vh;
+  background-color: pink; // Ejemplo de aplicación de color de fondo
+}

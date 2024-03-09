@@ -1,0 +1,8 @@
+@import "abstract/variables";
+
+body {
+    background-color: $background_color;
+    color: $main_color;
+    font-family: $font_type;
+    font-size: $font_syze;
+}

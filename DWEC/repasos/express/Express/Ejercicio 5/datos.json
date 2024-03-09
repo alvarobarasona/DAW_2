@@ -1,0 +1,16 @@
+[
+  {
+    "clave": "valor"
+  },
+  {},
+  {},
+  {},
+  {
+    "nombre": "Tarea de Matemáticas",
+    "autor": "Juan Perez"
+  },
+  {
+    "nombre": "Lenguaje",
+    "autor": "Paca Perez"
+  }
+]

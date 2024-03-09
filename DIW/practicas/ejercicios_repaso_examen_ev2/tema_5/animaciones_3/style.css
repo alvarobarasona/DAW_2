@@ -1,0 +1,211 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+.ex-a {
+    animation-name: changeColor;
+    animation-duration: 4s;
+}
+
+@keyframes changeColor {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: yellow;
+    }
+}
+
+.ex-b {
+    animation-name: changePorcentualColor;
+    animation-duration: 4s;
+}
+
+@keyframes changePorcentualColor {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.ex-c {
+    animation-name: changePorcentualColorMovement;
+    animation-duration: 4s;
+}
+
+@keyframes changePorcentualColorMovement {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(-300px, 0px);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-300px, 300px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 300px);
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.ex-d {
+    animation-name: changePorcentualColorMovementDelay;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+@keyframes changePorcentualColorMovementDelay {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(-300px, 0px);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-300px, 300px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 300px);
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.ex-e {
+    animation-name: changePorcentualColorMovementLoop;
+    animation-duration: 4s;
+    animation-iteration-count: 6;
+}
+
+@keyframes changePorcentualColorMovementLoop {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(-300px, 0px);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-300px, 300px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 300px);
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.ex-e2 {
+    animation-name: changePorcentualColorMovementLoop;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes changePorcentualColorMovementLoop {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(-300px, 0px);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-300px, 300px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 300px);
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.ex-f {
+    animation-name: changePorcentualColorMovementLoopAlternate;
+    animation-duration: 4s;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+}
+
+@keyframes changePorcentualColorMovementLoopAlternate {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(-300px, 0px);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-300px, 300px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 300px);
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+/* 
+div {
+animation-name: example;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-delay: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+El mismo efecto de animación como anteriormente se puede lograr mediante la
+abreviación animation propiedad:
+
+div {
+animation: example 5s linear 2s infinite alternate;
+}
+*/

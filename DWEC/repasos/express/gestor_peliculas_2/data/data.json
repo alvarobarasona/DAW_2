@@ -1,0 +1,12 @@
+{
+  "movies": [
+    {
+      "movieName": "aaaa",
+      "movieType": "pendingMovies"
+    },
+    {
+      "movieName": "bbbb",
+      "movieType": "showMovies"
+    }
+  ]
+}

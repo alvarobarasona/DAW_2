@@ -29,7 +29,7 @@ app.post("/addperson", (req, res) => {
         age: req.body.age,
         sex: req.body.sex
     };
-    fs.readFile((path.join(__dirname, "data", "people.json")), (err, data) => {
+    fs.readFile(path.join(__dirname, "data", "people.json"), (err, data) => {
         if(err) {
             res.status(internalServerError).send("Error al leer el JSON");
         }
@@ -55,7 +55,38 @@ app.post("/addperson", (req, res) => {
     });
 });
 
+app.get("/people", (req, res) => {
+    fs.readFile(path.join("data", "people.json"), (err, data) => {
+        if(err) {
+            res.status(internalServerError).send("Error al leer el JSON");
+            return;
+        }
+        res.json(JSON.parse(data));
+    });
+});
+
 app.get(("/public/client.js"), (req, res) => {
     res.set('Content-Type', 'application/javascript');
     res.sendFile(path.join(__dirname, "public", "client.js"));
+});
+
+app.delete("/deleteperson/:nif", (req, res) => {
+    const personNif = req.params.nif;
+
+    fs.readFile(path.join(__dirname, "data", "people.json"), (err, data) => {
+        if(err) {
+            throw err;
+        }
+        let people = JSON.parse(data);
+
+        people = people.filter((person) => person.nif !== personNif);
+
+        fs.writeFile(path.join(__dirname, "data", "people.json"), JSON.stringify(people), (err) => {
+            if(err) {
+                res.status(internalServerError).send("Error al escribir el JSON");
+                return;
+            }
+            res.status(sucessfullResponse).json({ message: "Persona eliminada correctamente" });
+        });
+    });
 });

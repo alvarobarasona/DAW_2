@@ -1,0 +1,157 @@
+// Variables
+$font-stack: Helvetica, sans-serif;
+$primary-color: #1865ae;
+$purple: #6b5b95;
+$yellow: #ffef61;
+$green: #88b04b;
+$light-pink: #f7cac9;
+$background-color-light: #fff;
+$background-color-dark: #222;
+$text-color-light: #000;
+$text-color-dark: #fff;
+
+// Mixins
+@mixin rounded-corners {
+  border-radius: 10px;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Estilos base
+body {
+  font-family: $font-stack;
+  background-color: $background-color-light;
+  color: $primary-color;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  background-color: $primary-color;
+
+  h1 {
+    margin: 0;
+    color: adjust-color($primary-color, $lightness: -40%);
+    flex-grow: 1;
+  }
+
+  .theme-switcher {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    background-color: $light-pink;
+    color: adjust-color($light-pink, $lightness: -50%);
+    @include rounded-corners;
+    @include box-shadow;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: darken($light-pink, 10%);
+    }
+  }
+}
+
+.movie-list {
+  @include rounded-corners;
+  @include box-shadow;
+  margin: 20px;
+  padding: 20px;
+  background-color: $background-color-light;
+  color: $text-color-light;
+}
+
+// Películas Pendientes
+.movie-list-pending {
+  background-color: $purple;
+}
+
+// Películas Vistas
+.movie-list-watched {
+  background-color: $yellow;
+}
+
+// Películas Favoritas
+.movie-list-favorites {
+  background-color: $green;
+}
+
+// Películas No Recomendadas
+.movie-list-not-recommended {
+  background-color: $primary-color;
+}
+
+// Modo oscuro
+.dark-mode {
+  background-color: $background-color-dark;
+  color: $text-color-dark;
+
+  h1 {
+    color: $text-color-dark;
+  }
+  button {
+    background-color: scale-color($light-pink, $lightness: -20%);
+    color: $text-color-dark;
+  }
+
+  .movie-list {
+    background-color: darken($background-color-dark, 5%);
+    color: $text-color-dark;
+    @include box-shadow;
+  }
+
+  .movie-list-pending {
+    background-color: scale-color($purple, $saturation: 30%, $lightness: 20%);
+    color: adjust-color($purple, $lightness: +50%);
+  }
+
+  .movie-list-watched {
+    background-color: scale-color($yellow, $saturation: 30%, $lightness: 20%);
+    color: adjust-color($yellow, $lightness: +50%);
+  }
+
+  .movie-list-favorites {
+    background-color: scale-color($green, $saturation: 30%, $lightness: 20%);
+    color: adjust-color($green, $lightness: +50%);
+  }
+
+  .movie-list-not-recommended {
+    background-color: scale-color(
+      $primary-color,
+      $saturation: 30%,
+      $lightness: 20%
+    );
+    color: adjust-color($primary-color, $lightness: +50%);
+  }
+}
+
+// Cambio de colores
+$colors: (
+  #34568b,
+  #ff6f61,
+  #88b04b,
+  #f7cac9,
+  #92a8d1,
+  #955251,
+  #b565a7,
+  #009b77,
+  #dd4124
+);
+
+@each $color in $colors {
+  .color-#{index($colors, $color)} {
+    background-color: $color;
+    color: adjust-color($color, $lightness: -50%);
+  }
+}

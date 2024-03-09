@@ -1,0 +1,14 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Manolo",
+            "contraseña": "1234",
+            "peliculas": {
+                "pendientes": ["star wars: episodio II", "star wars: episodio III"],
+                "vistas": ["star wars: episodio IV"],
+                "favoritas": ["star wars: episodio VII"],
+                "no-recomendadas": ["star trek"]
+            }
+        }
+    ]
+}
