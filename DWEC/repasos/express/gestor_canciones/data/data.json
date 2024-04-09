@@ -1,0 +1,48 @@
+{
+    "users": [
+      {
+        "id": "1",
+        "name": "pepe",
+        "password": "123",
+        "songs": [
+          {
+            "title": "California Love",
+            "artist": "2Pac",
+            "category": "favourites"
+          },
+          {
+            "title": "Method man",
+            "artist": "Wu Tang Clan",
+            "category": "pending"
+          },
+          {
+            "title": "survival of the fittest",
+            "artist": "Mobb Deep",
+            "category": "not-recomended"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "maria",
+        "password": "123",
+        "songs": [
+          {
+            "title": "who am i",
+            "artist": "Snoop Dogg",
+            "category": "favourites"
+          },
+          {
+            "title": "still dre",
+            "artist": "Dr Dre",
+            "category": "pending"
+          },
+          {
+            "title": "without me",
+            "artist": "Eminem",
+            "category": "not-recomended"
+          }
+        ]
+      }
+    ]
+  }

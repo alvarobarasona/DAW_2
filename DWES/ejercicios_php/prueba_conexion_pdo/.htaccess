@@ -1,0 +1,3 @@
+RewriteEngine ON
+RewriteBase /
+RewriteRule ^insertdata$ /ejercicios_php_prueba_conexion_pdo/server.php

@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^insertdata$ ejercicios_php/web_pokemon/server.php [L]
+RewriteRule ^deletedata$ ejercicios_php/web_pokemon/server.php [L]
+RewriteRule ^modifypage$ ejercicios_php/web_pokemon/update.php [L]
+RewriteRule ^modifydata$ ejercicios_php/web_pokemon/server.php [L]

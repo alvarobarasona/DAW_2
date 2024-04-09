@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^insertdata$ ejercicios_php/examen_primer_trimestre/ejercicio_3/server.php [L]

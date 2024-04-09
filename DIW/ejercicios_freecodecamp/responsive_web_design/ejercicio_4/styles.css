@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+    #header {
+        background-color: green;
+    }
+}
+
+#header {
+    position: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}

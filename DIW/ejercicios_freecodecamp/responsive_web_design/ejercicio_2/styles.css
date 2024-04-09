@@ -1,0 +1,9 @@
+#image {
+    display:block; max-width:100%;
+  }
+  
+#img-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
