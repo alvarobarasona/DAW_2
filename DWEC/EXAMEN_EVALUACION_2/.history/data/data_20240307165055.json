@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "user1": {
+                "name": "pepe",
+                "password": "123a",
+                "movies": [
+                    {
+                        "title": "Star Wars",
+                        "type": "pendingMovies"
+                    }
+                ]
+            }
+        },
+        {
+            "user2": {
+                "name": "maria",
+                "password": "456b",
+                "movies": [
+                    {
+                        "title": "Narnia",
+                        "type": "favouritesMovies"
+                    }
+                ]
+            }
+        },
+        {
+            "user3": {
+                "name": "juan",
+                "password": "789c",
+                "movies": [
+                    {
+                        "title": "El",
+                        "type": "favouritesMovies"
+                    }
+                ]
+            }
+        }
+    ]
+}

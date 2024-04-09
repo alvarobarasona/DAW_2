@@ -1,0 +1,8 @@
+{
+  "movies": [
+    {
+      "movieName": "Star wars",
+      "movieType": "pendingMovies"
+    }
+  ]
+}

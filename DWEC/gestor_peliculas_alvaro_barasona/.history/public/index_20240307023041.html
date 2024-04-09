@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de películas</title>
+        <script src="./js/client.js" defer></script>
+        <style>
+            #movies-container {
+                display: flex;
+                justify-content: space-around;
+            }
+            .movie-container {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+            }
+            .movie-type-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Gestor de películas</h1>
+        </header>
+        <main>
+            <form>
+                <label for="input-movie-name">Nueva película:</label>
+                <input type="text" id="input-movie-name" required>
+                <select id="input-movie">
+                    <option value="pendingMovies">Películas pendientes</option>
+                    <option value="showMovies">Películas vistas</option>
+                    <option value="favouritesMovies">Películas favoritas</option>
+                    <option value="noRecomendatedMovies">Películas no recomendadas</option>
+                </select>
+                <button id="add-movie-button">Añadir</button>
+            </form>
+            <div id="movies-container">
+                <div id="pending-movies-container">
+                    <div id="pending-movies-header">
+                        <h2 id="pending-movies-title">Películas pendientes</h2>
+                    </div>
+                    <div id="pending-movies" class="movie-type-container">
+                        <!-- Aquí se generarán las películas pendientes -->
+                    </div>
+                </div>
+                <div id="show-movies-container">
+                    <div id="show-movies-header">
+                        <h2 id="show-movies-title">Películas vistas</h2>
+                    </div>
+                    <div id="show-movies" class="movie-type-container">
+                        <!-- Aquí se generarán las películas vistas -->
+                    </div>
+                </div>
+                <div id="favourites-movies-container">
+                    <div id="favourites-movies-header">
+                        <h2 id="favourites-movies-title">Películas favoritas</h2>
+                    </div>
+                    <div id="favourites-movies" class="movie-type-container">
+                        <!-- Aquí se generarán las películas favoritas -->
+                    </div>
+                </div>
+                <div id="no-recomendated-movies-container">
+                    <div id="no-recomendated-movies-header">
+                        <h2 id="no-recomendated-movies-title">Películas no recomendadas</h2>
+                    </div>
+                    <div id="no-recomendated-movies" class="movie-type-container">
+                        <!-- Aquí se generarán las películas no recomendadas -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

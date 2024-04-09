@@ -1,0 +1,1 @@
+No consigo que me salga la autentificación del usuario y el correspondiente contenido de cada uno de estos. He dejado comentado el primer punto de hacer que aparezca la página para loguearse, pero funciona perfecta

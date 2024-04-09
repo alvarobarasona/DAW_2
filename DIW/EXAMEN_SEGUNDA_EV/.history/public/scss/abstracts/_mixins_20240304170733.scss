@@ -1,0 +1,6 @@
+@mixin flex_display($display_option) {
+    display: flex;
+    flex-direction: $display_option;
+}
+
+@mixin aparience

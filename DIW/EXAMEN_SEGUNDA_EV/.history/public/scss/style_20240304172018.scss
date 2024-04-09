@@ -1,0 +1,21 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+header {
+    @include aparience(row, $header_color, $header_font_color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    @include aparience(row, $main_bgc, $movies_font_color);
+}
+
+#pendient-movies {
+    @include aparience(column, $pendient_movies, $movies_font_color);
+}
+
+#show-movies {
+    @include aparience(column, $show_movies, $movies_font_color);
+}

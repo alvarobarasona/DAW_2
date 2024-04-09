@@ -1,0 +1,91 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    @include aparience(row, $header_color, $header_font_color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    @include aparience(row, $main_bgc, $movies_font_color);
+    padding: $web_padding;
+    gap: $web_gap;
+    height: 100%;
+    @include flex_display(row);
+    justify-content: center;
+}
+
+.movies-column {
+    @include flex_display(column);
+    gap: $web_gap;
+    width: $max_widht: 100%;
+}
+
+#pendient-movies-header {
+    @include aparience(row, $pendient_movies, $movies_font_color);
+    padding: $web_padding;
+}
+
+#pendient-movies-container {
+    @include aparience(column, lighten($pendient_movies, $opacity), $movies_font_color);
+    padding: $web_padding;
+    border-radius: $web_border_radius;
+    height: 100%;
+}
+
+#show-movies-header {
+    @include aparience(row, $show_movies, $movies_font_color);
+    padding: $web_padding;
+}
+
+#show-movies-container {
+    @include aparience(column, lighten($show_movies, $opacity), $movies_font_color);
+    padding: $web_padding;
+    border-radius: $web_border_radius;
+    height: 100%;
+}
+
+#favourites-movies-header {
+    @include aparience(row, $favourites_movies, $movies_font_color);
+    padding: $web_padding;
+}
+
+#favourites-movies-container {
+    @include aparience(column, lighten($favourites_movies, $opacity), $movies_font_color);
+    padding: $web_padding;
+    border-radius: $web_border_radius;
+    height: 100%;
+}
+
+#no-recomendated-movies-header {
+    @include aparience(row, $no_recomendated_movies, $movies_font_color);
+    padding: $web_padding;
+}
+
+#no-recomendated-movies-container {
+    @include aparience(column, lighten($no_recomendated_movies, $opacity), $movies_font_color);
+    padding: $web_padding;
+    border-radius: $web_border_radius;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+   list-style: none;
+}

@@ -1,0 +1,40 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margi
+}
+
+header {
+    @include aparience(row, $header_color, $header_font_color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    @include aparience(row, $main_bgc, $movies_font_color);
+    padding: $web_padding;
+    gap: $web_gap;
+    height: 100%;
+}
+
+.movies-column {
+    @include flex_display(column);
+}
+
+#pendient-movies-header {
+    @include aparience(row, $show_movies, $movies_font_color);
+    padding: $web_padding;
+}
+
+#pendient-movies-container {
+
+}

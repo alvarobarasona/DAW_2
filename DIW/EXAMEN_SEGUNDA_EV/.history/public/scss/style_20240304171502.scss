@@ -1,0 +1,11 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+header {
+    @include aparience(row, $header_color, $header_font_color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+main {}

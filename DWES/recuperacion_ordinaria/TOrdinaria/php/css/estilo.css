@@ -1,0 +1,63 @@
+/* Colores de floristería */
+body {
+    background-color: #f5f5f5;
+    font: helvetica, sans-serif;
+}
+
+/*margen superior entre labels */
+label {
+    margin-top: 10px;
+}
+
+/* tabla centrada y el mismo estilo con border en celdas. Está en un contenedor */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+#contenedor {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+/* Un botón bonito y centrado */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Todo ocupa el ancho*/
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Los errores cada uno en una línea y también bonitos */
+.error {
+    color: red;
+    display: block;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    font-weight: bold;
+}
+.error {
+    color: red;
+}

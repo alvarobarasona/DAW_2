@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "user1": {
+                "name": "pepe",
+                "password": "123a",
+                "movies": [
+                    {
+                        "title": "Star Wars",
+                        "type": "pendingMovies"
+                    }
+                ]
+            }
+        },
+        {
+            "user1": {
+                "name": "pepe",
+                "password": "123a",
+                "movies": [
+                    {
+                        "title": "Star Wars",
+                        "type": "pendingMovies"
+                    }
+                ]
+            }
+        }
+    ]
+}
