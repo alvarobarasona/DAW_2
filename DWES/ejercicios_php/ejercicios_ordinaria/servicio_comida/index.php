@@ -48,15 +48,15 @@
 
         if(empty($errors_array)) {
 
-            $name = urldecode($_POST["name"]);
-            $address = urldecode($_POST["address"]);
-            $dishes = urldecode($_POST["dishes"]);
-            $vegetarian = urldecode($_POST["vegetarian"]);
-            $allergies = is_valid_data($_POST["allergies"]) ? implode(", ", $_POST["allergies"]) : "";
+            $name = urlencode($_POST["name"]);
+            $address = urlencode($_POST["address"]);
+            $dishes = urlencode($_POST["dishes"]);
+            $vegetarian = urlencode($_POST["vegetarian"]);
+            $allergies = isset($_POST["allergies"]) ? implode(", ", $_POST["allergies"]) : "";
 
             var_dump($allergies);
 
-            header("Location: exit.php?name=$nombre&address=$address&dishes=$dishes&vegetarian=$vegetarian&allergies");
+            header("Location: exit.php?name=$name&address=$address&dishes=$dishes&vegetarian=$vegetarian&allergies=$allergies");
             die();
         }
         
