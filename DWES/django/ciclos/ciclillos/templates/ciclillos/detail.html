@@ -1,0 +1,11 @@
+{% if familia %}
+    <h1>{{ familia.titulo }}</h1>
+    <p>{{ familia.descripcion }}</p>
+    <ul>
+        {% for ciclo in familia.ciclo_set.all %}
+            <li>{{ ciclo.titulo }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No exise la familia</p>
+{% endif %}
