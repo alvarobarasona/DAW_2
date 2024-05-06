@@ -1,5 +1,8 @@
 <?php
     define("MIN_DATE", "1920-01-01");
+    define("IMAGE_ERROR", 0);
+    define("PATH", "subidas/");
+    require("db.php");
     $current_date = date("Y-m-d");
 
     $errors_array = [];
@@ -11,7 +14,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit-button"])) {
 
-        var_dump($_POST["description"]);
+        var_dump($_FILES["image"]["name"]);
         
         if(!is_valid_data($_POST["date"])) {
 
@@ -44,14 +47,59 @@
             $errors_array["empty-description"] = "El campo de la descripción no puede estar vacío";
         }
 
-        if(!is_valid_data($_FILES["file"]["name"])) {
+        if(!isset($_FILES["image"]["error"]) || $_FILES["image"]["error"] != IMAGE_ERROR) {
 
-            $errors_array["empty-file"] = "El campo de la imagen no puede estar vacío";
-        }
+            $errors_array["image-error"] = "Error en la imagen";
+        } else {
 
-        if(empty($errors_array)) {
+            $file_name = basename($_FILES["image"]["name"]);
 
-            header("Location: exit");
+            $file_path = PATH . $file_name;
+
+            $acc = 1;
+
+            while(file_exists($file_path)) {
+
+                $ext_less_name = pathinfo($file_name, PATHINFO_FILENAME);
+                $file_format = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+                $file_path = PATH . "$ext_less_name-$acc.$file_format";
+                $acc++;
+            }
+
+            $check_file = getimagesize($_FILES["image"]["tmp_name"]);
+
+            if($check_file !== false) {
+
+                move_uploaded_file($_FILES["image"]["tmp_name"], $file_path);
+            } else {
+
+                $errors_array["file-error"] = "Archivo $file_name invádido";
+            }
+
+            if(empty($errors_array)) {
+
+                $date = $_POST["date"];
+                $place = $_POST["place"];
+                $name = $_POST["name"];
+                $description = $_POST["description"];
+                $image = $file_path;
+
+                $insert = $db->prepare("INSERT INTO acciones (fecha, lugar, nombre, descripcion, foto) VALUES (:fecha, :lugar, :nombre, :descripcion, :foto)");
+
+                $insert->bindValue(":nombre", $name);
+                $insert->bindValue(":fecha", $date);
+                $insert->bindValue(":lugar", $place);
+                $insert->bindValue(":descripcion", $description);
+                $insert->bindValue(":foto", $image);
+
+                try {
+
+                    $insert->execute();
+                } catch(PDOException $pdoe) {
+
+                    echo "Error al insertar el dato: {$pdoe->getMessage()}";
+                }
+            }
         }
     }
 ?>
@@ -106,8 +154,11 @@
             <div>
                 <label for="image-input">Imágen:</label>
                 <input type="file" name="image" id="image-input">
-                <?php if(isset($errors_array["empty-file"])) : ?>
-                    <span class="error"><?= $errors_array["empty-file"] ?></span>
+                <?php if(isset($errors_array["image-error"])) : ?>
+                    <span class="error"><?= $errors_array["image-error"] ?></span>
+                <?php endif; ?>
+                <?php if(isset($errors_array["file-error"])) : ?>
+                    <span class="error"><?= $errors_array["file-error"] ?></span>
                 <?php endif; ?>
             </div>
             <button type="submit" name="submit-button">Enviar</button>
