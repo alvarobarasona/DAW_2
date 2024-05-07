@@ -1,5 +1,5 @@
 <?php
-    abstract class DataGestor {
+    trait BaseGestor {
 
         protected $name;
         protected $description;
@@ -9,6 +9,10 @@
             $this->name = $name;
             $this->description = $description;
         }
+    }
+    abstract class DataGestor {
+
+        use BaseGestor;
 
         abstract function get_detail();
     }

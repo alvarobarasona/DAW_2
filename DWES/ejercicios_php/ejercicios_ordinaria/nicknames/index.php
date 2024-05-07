@@ -1,4 +1,11 @@
 <?php
+    /*
+        Implementar un formulario HTML para la captura de datos de empleados. Los campos del formulario deben incluir nombre, departamento y mote. Debajo aparecerá un listado. Toda la información se almacena en:
+
+        1. versión con CSV
+        2. versión con json
+    */
+
     define("WORKER_INP_NAME", "name");
     define("WORKER_INP_ERROR", "empty-name");
     define("WORKER_INP_DEPART", "depart");
@@ -8,12 +15,7 @@
     define("CSV_PATH", "files/data.csv");
     define("JSON_PATH", "files/data.json");
 
-    /*
-        Implementar un formulario HTML para la captura de datos de empleados. Los campos del formulario deben incluir nombre, departamento y mote. Debajo aparecerá un listado. Toda la información se almacena en:
-
-        1. versión con CSV
-        2. versión con json
-    */
+    $workers_array = [];
 
     $errors_array = [];
 
@@ -56,10 +58,45 @@
 
         if(empty($errors_array)) {
 
+            
+
+            if(!file_exists(JSON_PATH)) {
+
+                echo "<p>No existe el fichero json</p>";
+            } else {
+
+                //$write_json_file = fopen(JSON_PATH, "w");
+
+                $worker = "{\"name\": \"{$_POST[WORKER_INP_NAME]}\", \"depart\": \"{$_POST[WORKER_INP_DEPART]}\", \"nick\": \"{$_POST[WORKER_INP_NICK]}\"}";
+
+                array_push($workers_array, $worker);
+
+                var_dump($workers_array);
+
+                file_put_contents(JSON_PATH, "[" . implode($workers_array) . "]", FILE_APPEND);
+
+                
+                //fwrite($write_json_file, );
+
+                var_dump(file_get_contents(JSON_PATH));
+/*
+                if(file_get_contents(JSON_PATH) === "") {
+
+                    fwrite($write_json_file, $worker);
+                } else {
+
+                    fwrite($write_json_file, ", $worker");
+                }
+                fclose($write_json_file);
+                */
+            }
+            
             $data_row = "{$_POST[WORKER_INP_NAME]};{$_POST[WORKER_INP_DEPART]};{$_POST[WORKER_INP_NICK]}";
 
             file_put_contents(CSV_PATH, $data_row . PHP_EOL, FILE_APPEND);
-            file_put_contents(JSON_PATH, json_encode($data_row) . "\n", FILE_APPEND);
+            //file_put_contents(JSON_PATH, json_encode($data_row) . "\n", FILE_APPEND);
+
+            //var_dump(file_get_contents(JSON_PATH, json_decode($data_row) . "\n", FILE_APPEND));
         }
     }
 ?>

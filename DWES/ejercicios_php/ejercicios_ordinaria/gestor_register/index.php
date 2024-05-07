@@ -21,7 +21,6 @@
         Implementar las clases y el trait, y luego crear instancias de cada tipo de gestor de datos, asignarles valores a sus propiedades, y utilizar el HTMLRenderer para mostrar estas propiedades en formato HTML. El script principal debe usar autoload. Se creará un array de gestores de bases de datos y luego en la misma página se recorrerá mostrando la información.
     */
     define("NAME_POSITION", 0);
-    define("DESCRIPTION_POSITION", 1);
 
     spl_autoload_register(function($class) {
 
@@ -35,9 +34,6 @@
             if($key == NAME_POSITION) {
 
                 echo "<h1>$value</h1>";
-            } elseif($key == DESCRIPTION_POSITION) {
-
-                echo "<p>$value</p>";
             } else {
 
                 echo "<p>$value</p>";
