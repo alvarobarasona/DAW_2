@@ -1,7 +1,4 @@
 <?php
-
-    require("DataGestor");
-
     class RelationalGestor extends DataGestor {
 
         private $operative_system;
@@ -16,15 +13,13 @@
             $this->transaction_support = $transaction_support;
         }
 
-        function get_detail()
-        {
+        function get_detail() {
             
+            yield $this->name;
+            yield $this->description;
+            yield $this->operative_system;
+            yield $this->version;
+            yield $this->transaction_support;
         }
     }
-
-    
-    $relational_gestor = new RelationalGestor("name", "description", "OS", "version", "trans supp");
-
-    echo "pula";
-    var_dump($relational_gestor);
 ?>

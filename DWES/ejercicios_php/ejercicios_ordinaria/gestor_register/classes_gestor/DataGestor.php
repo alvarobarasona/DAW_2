@@ -1,6 +1,4 @@
 <?php
-    require("RelationalGestor");
-
     abstract class DataGestor {
 
         protected $name;
