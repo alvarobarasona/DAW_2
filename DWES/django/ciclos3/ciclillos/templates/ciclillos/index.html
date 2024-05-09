@@ -1,0 +1,9 @@
+{% if familias %}
+    <ul>
+        {% for familia in familias %}
+            <li><a href="{% url 'ciclillos:ciclos' pk=familia.id %}">{{ familia.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay familias añadidas a la BBDD</p>
+{% endif %}

@@ -14,10 +14,11 @@
     define("NICK_INP_ERROR", "empty-nick");
     define("CSV_PATH", "files/data.csv");
     define("JSON_PATH", "files/data.json");
-
-    $workers_array = [];
+    define("ARRAYS_FIRST_POSITION", 0);
 
     $errors_array = [];
+
+    $workers_array = json_decode(file_get_contents(JSON_PATH), true);
 
     function is_valid_data($data) {
 
@@ -58,45 +59,44 @@
 
         if(empty($errors_array)) {
 
-            
+            $worker = [
+                "name"=> $_POST[WORKER_INP_NAME],
+                "depart"=> $_POST[WORKER_INP_DEPART],
+                "nick"=> $_POST[WORKER_INP_NICK]
+            ];
 
-            if(!file_exists(JSON_PATH)) {
-
-                echo "<p>No existe el fichero json</p>";
-            } else {
-
-                //$write_json_file = fopen(JSON_PATH, "w");
-
-                $worker = "{\"name\": \"{$_POST[WORKER_INP_NAME]}\", \"depart\": \"{$_POST[WORKER_INP_DEPART]}\", \"nick\": \"{$_POST[WORKER_INP_NICK]}\"}";
+            if($workers_array !== null) {
 
                 array_push($workers_array, $worker);
+            } else {
 
-                var_dump($workers_array);
-
-                file_put_contents(JSON_PATH, "[" . implode($workers_array) . "]", FILE_APPEND);
-
-                
-                //fwrite($write_json_file, );
-
-                var_dump(file_get_contents(JSON_PATH));
-/*
-                if(file_get_contents(JSON_PATH) === "") {
-
-                    fwrite($write_json_file, $worker);
-                } else {
-
-                    fwrite($write_json_file, ", $worker");
-                }
-                fclose($write_json_file);
-                */
+                $workers_array[ARRAYS_FIRST_POSITION] = $worker;
             }
+
+            file_put_contents(JSON_PATH, json_encode($workers_array));
             
             $data_row = "{$_POST[WORKER_INP_NAME]};{$_POST[WORKER_INP_DEPART]};{$_POST[WORKER_INP_NICK]}";
 
             file_put_contents(CSV_PATH, $data_row . PHP_EOL, FILE_APPEND);
-            //file_put_contents(JSON_PATH, json_encode($data_row) . "\n", FILE_APPEND);
 
-            //var_dump(file_get_contents(JSON_PATH, json_decode($data_row) . "\n", FILE_APPEND));
+            $csv_file = fopen(CSV_PATH, "r");
+
+            if($csv_file) {
+        
+                $csv_array = [];
+        
+                while($row = fgets($csv_file)) {
+        
+                    array_push($csv_array, trim($row));
+                }
+
+                fclose($csv_file);
+        
+                for($i = 0; $i < count($csv_array); $i++) {
+        
+                    $csv_array[$i] = explode(";", $csv_array[$i]);
+                }
+            }
         }
     }
 ?>
@@ -132,5 +132,47 @@
             </div>
             <button type="submit" name="submit-button">Enviar</button>
         </form>
+        <?php if(!empty($workers_array)) : ?>
+            <h2>Fichero JSON</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Mote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($workers_array as $employee) : ?>
+                        <tr>
+                            <?php foreach($employee as $value) : ?>
+                                <td><?= $value; ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+        <?php if(!empty($csv_array)) : ?>
+            <h2>Fichero CSV</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Mote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($csv_array as $row) : ?>
+                        <tr>
+                            <?php foreach($row as $value) : ?>
+                                <td><?= $value; ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>         
     </body>
 </html>

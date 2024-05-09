@@ -1,0 +1,9 @@
+{% if familias %}
+    <ul>
+        {% for familia in familias %}
+            <li><a href="{% url 'ciclotes:ciclos' pk=familia.id %}">{{ familia.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay familias profesionales añadidas a la BBDD</p>
+{% endif %}

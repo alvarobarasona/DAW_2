@@ -1,0 +1,11 @@
+{% if ciclos %}
+    <h1>{{ ciclos.titulo }}</h1>
+    <p>{{ ciclos.descripcion }}</p>
+    <ul>
+        {% for ciclo in ciclos.ciclo_set.all %}
+            <li>{{ ciclo.titulo }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay ciclos profesionales añadidas a la BBDD</p>
+{% endif %}

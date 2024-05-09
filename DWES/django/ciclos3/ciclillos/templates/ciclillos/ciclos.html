@@ -1,0 +1,11 @@
+{% if familia %}
+    <h1>{{ familia.nombre }}</h1>
+    <p>{{ familia.descripcion }}</p>
+    <ul>
+        {% for ciclo in familia.ciclo_set.all %}
+            <li>{{ ciclo.nombre }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay ciclos añadidos a la BBDD</p>
+{% endif %}
