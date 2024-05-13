@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reproductor de música</title>
+    </head>
+    <body>
+        <h1>Reproductor de música</h1>
+        <form action="{% url 'reproductor:cancion' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <div>
+                    <label for="input-nombre">Nombre de la canción:</label>
+                    <input type="text" name="nombre" id="input-nombre">
+                </div>
+                <div>
+                    <label>Género de la canción:</label>
+                    <select name="genero">
+                        <option value="rock">Rock</option>
+                        <option value="pop">Pop</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="metal">Metal</option>
+                        <option value="reggae">Reggae</option>
+                        <option value="salsa">Salsa</option>
+                        <option value="bachata">Bachata</option>
+                        <option value="merengue">Merengue</option>
+                        <option value="vallenato">Vallenato</option>
+                        <option value="cumbia">Cumbia</option>
+                        <option value="samba">Samba</option>
+                        <option value="bossanova">Bossa Nova</option>
+                        <option value="tango">Tango</option>
+                        <option value="flamenco">Flamenco</option>
+                        <option value="ranchera">Ranchera</option>
+                        <option value="bolero">Bolero</option>
+                        <option value="ska">Ska</option>
+                        <option value="punk">Punk</option>
+                        <option value="reggaeton">Reggaeton</option>
+                        <option value="trap">Trap</option>
+                        <option value="hiphop">Hip Hop</option>
+                        <option value="rap">Rap</option>
+                        <option value="blues">Blues</option>
+                        <option value="country">Country</option>
+                        <option value="electronic">Electronica</option>
+                        <option value="house">House</option>
+                        <option value="techno">Techno</option>
+                        <option value="trance">Trance</option>
+                        <option value="dubstep">Dubstep</option>
+                        <option value="drumandbass">Drum and Bass</option>
+                        <option value="ambient">Ambient</option>
+                        <option value="chillout">Chillout</option>
+                        <option value="newage">New Age</option>
+                        <option value="classical">Clasica</option>
+                        <option value="opera">Opera</option>
+                        <option value="regional">Regional</option>
+                        <option value="folk">Folk</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="input-archivo">Introduce la canción:</label>
+                    <input type="file" name="archivo">
+                </div>
+            </fieldset>
+            <button type="submit" name="boton-aniadir">Añadir</button>
+        </form>
+        {% if canciones %}
+            {% for cancion in canciones %}
+                <div>
+                    <h4>{{ cancion.nombre }}</h4>
+                    <p>{{ cancion.genero }}</p>
+                    <audio controls>
+                        <source src="{{ cancion.archivo.url }}" type="audio/mpeg">
+                    </audio>
+                </div>
+            {% endfor %}
+            {% if canciones.has_previous %}
+                <a href="?pagina={{ canciones.previous_page_number }}"><</a>
+            {% endif %}
+            {% for pagina in paginas %}
+                <a href="?pagina={{ pagina }}">{{ pagina }}</a>
+            {% endfor %}
+            {% if canciones.has_next %}
+                <a href="?pagina={{ canciones.next_page_number }}">></a>
+            {% endif %}
+        {% else %}
+            <p>No hay canciones añadidas a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

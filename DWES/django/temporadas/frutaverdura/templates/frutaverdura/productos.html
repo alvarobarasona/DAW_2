@@ -11,7 +11,7 @@
             {% for producto in productos %}
                 <div>
                     <h2>{{ producto.nombre }}</h2>
-                    <img src="frutaverdura/images/{{ producto.foto }}" alt="{{ producto.foto }}">
+                    <img src="{{ producto.foto.url }}" alt="{{ producto.nombre }}">
                     <p>{{ producto.descripcion }}</p>
                 </div>
             {% endfor %}

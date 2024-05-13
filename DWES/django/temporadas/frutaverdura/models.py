@@ -4,7 +4,7 @@ from django.db import models
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=200)
-    foto = models.ImageField(upload_to='frutaverdura', null=True, blank=True)
+    foto = models.ImageField(upload_to='frutaverdura/media/images/', null=True, blank=True)
     descripcion = models.TextField()
     fecha_inicio = models.DateField()
     fecha_final = models.DateField()
