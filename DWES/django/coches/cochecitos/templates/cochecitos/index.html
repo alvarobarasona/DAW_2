@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista coches</title>
+        <style>
+            img {
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if coches %}
+            {% include 'cochecitos/formulario.html' %}
+            {% for coche in coches %}
+                <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}"><br>
+                <p>{{ coche.fabricante }} {{ coche.modelo }} {{ coche.combustible }} {{ coche.estado }} {{ coche.precio }}€</p><br>
+                <p>Tardarías un total de {{ coche.meses }} meses y {{ coche.anos }} años en pagar este coche</p>
+            {% endfor %}
+        {% else %}
+            <p>No hay coches añadidos a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

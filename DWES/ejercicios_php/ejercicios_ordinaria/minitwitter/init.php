@@ -11,7 +11,7 @@
     $db->inicializa(
         'autentificacion',
         'autentificacion',
-        '1234'
+        '1312'
     );
 
     session_start();

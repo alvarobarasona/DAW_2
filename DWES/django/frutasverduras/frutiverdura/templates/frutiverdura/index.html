@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Frutas y verduras</title>
+    </head>
+    <body>
+        {% if meses %}
+            {% for mes in meses %}
+                <a href="{% url 'frutiverdura:detail' mes=forloop.counter %}">{{ mes }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>Error al cargar los meses</p>
+        {% endif %}
+    </body>
+</html>

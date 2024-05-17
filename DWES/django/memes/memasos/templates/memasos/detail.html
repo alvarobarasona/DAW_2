@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memes - Detalle</title>
+    </head>
+    <body>
+        {% if meme %}
+            <img src="{{ meme.imagen.url }}" alt="{{ meme.descripcion }}">
+            <h1>{{ meme.descripcion }}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" name="texto">
+                <button type="submit">Enviar</button>
+            </form>
+            {% if meme.comentario_set.all %}
+                <h2>Comentarios</h2>
+                {% for comentario in meme.comentario_set.all %}
+                    <p>{{ comentario.texto }}</p>
+                {% endfor %}
+            {% else %}
+                <p>El meme no tiene comentarios</p>
+            {% endif %}
+        {% else %}
+            <p>El meme no existe</p>
+        {% endif %}
+    </body>
+</html>

@@ -1,5 +1,10 @@
 <?php
     require_once('init.php');
+
+    if(!isset($_SESSION['session'])) {
+        header('Location: login.php');
+        die();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +15,6 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Bienvenido</h1>
-        <p>Lo que vas a ver te cambiará la vida... <a href="privada.php">adelante</a></p>
+        <h1>HAS ACCEDIDO A TU PERFIL</h1>
     </body>
 </html>
