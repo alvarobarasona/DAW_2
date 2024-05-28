@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memitos - Index</title>
+    </head>
+    <body>
+        {% if memes %}
+            <h1>Memes</h1>
+            {% for meme in memes %}
+                <div>
+                    <a href="{% url 'memitos:detail' slug=meme.slug %}">
+                        <h2>{{ meme.titulo }}</h2>
+                        <img src="{{ meme.imagen.url }}" alt="{{ meme.titulo }}">
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>No hay memes añadidos a la BBDD</h1>
+        {% endif %}
+    </body>
+</html>

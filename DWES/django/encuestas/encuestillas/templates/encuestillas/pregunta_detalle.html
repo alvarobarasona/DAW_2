@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encuestas - Detalle pregunta</title>
+    </head>
+    <body>
+        <h1>{{ pregunta.texto }}</h1>
+            <form action="" method="post">
+                <ul>
+                    {% for respuesta in pregunta.respuesta_set.all %}
+                        <li>{{ respuesta.texto }} | Votos:{{ respuesta.votos }} <button formaction="{% url 'encuestillas:detallepregunta' respuesta.pk %}">Votar</button></li>
+                    {% endfor %}
+                </ul>
+            </form>
+        <form action="">
+            <button formaction="{% url 'encuestillas:formulariorespuestas' pregunta.pk %}">Añadir respuesta</button>
+            <button formaction="{% url 'encuestillas:listapreguntas' %}">Volver</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tareas - Detalle</title>
+    </head>
+    <body>
+        <h1>{{ tarea.titulo }}</h1>
+        <p>{{ tarea.descripcion }}</p>
+        <p>Fecha creación: {{ tarea.fecha_creacion }}</p>
+        <p>Fecha vencimiento: {{ tarea.fecha_vencimiento }}</p>
+        <p>Prioridad: {{ tarea.prioridad }}</p>
+        <p>Estado: {{ tarea.estado }}</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button formaction="{% url 'tareillas:delete' tarea.pk %}">Eliminar</button>
+        </form>
+        <form action="">
+            <button formaction="{% url 'tareillas:update' tarea.pk %}">Modificar</button>
+            <button formaction="{% url 'tareillas:lista' %}">Volver</button>
+        </form>
+    </body>
+</html>

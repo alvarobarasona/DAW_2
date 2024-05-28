@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coches - Index</title>
+        <style>
+            img {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if cars %}
+            <h1>Lista coches</h1>
+            {% for car in cars %}
+                <img src="{{ car.car_photo.url }}" alt="{{ car.car_manufacturer }}-{{ car.car_model }}">
+                <h2>{{ car.car_manufacturer }} {{ car.car_model }} {{ car.car_price }} {{ car.car_state }} {{ car.car_fuel }}</h2>
+            {% endfor %}
+        {% else %}
+            <p>No hay coches añadidos a la lista</p>
+        {% endif %}
+    </body>
+</html>

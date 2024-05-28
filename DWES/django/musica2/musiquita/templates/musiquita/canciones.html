@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Musiquita</title>
+    </head>
+    <body>
+        {% if canciones %}
+            <h1>Canciones</h1>
+            {% for cancion in canciones %}
+                <h2>{{ cancion.titulo }}</h2>
+                <h3>{{ cancion.genero }}</h3>
+                <audio controls>
+                    <source src="{{ cancion.archivo_cancion.url }}" type="audio/mpeg">
+                </audio>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% else %}
+            <p>No hay canciones añadidas</p>
+        {% endif %}
+    </body>
+</html>

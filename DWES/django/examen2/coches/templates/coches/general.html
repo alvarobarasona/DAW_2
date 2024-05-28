@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coches - General</title>
+        <style>
+            img {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{% url 'coches:general' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+        {% if cars %}
+            <h1>Lista coches</h1>
+            {% for car in cars %}
+                <div>
+                    <img src="{{ car.car_photo.url }}" alt="{{ car.car_manufacturer }}-{{ car.car_model }}">
+                    <p>Tardarás un total de {{ car.years }} años y {{ car.months }} meses en pagar este coche</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay coches añadidos a la lista</p>
+        {% endif %}
+    </body>
+</html>

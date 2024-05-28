@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encuestas - Lista preguntas</title>
+    </head>
+    <body>
+        {% if preguntas %}
+            {% for pregunta in preguntas %}
+                <a href="{% url 'encuestillas:detallepregunta' pregunta.pk %}">{{ pregunta.texto }}</a><br>
+            {% endfor %}
+            <form action="{% url 'encuestillas:formulariopreguntas' %}">
+                <button>Añadir pregunta</button>
+            </form>
+        {% else %}
+            <p>No hay preguntas añadidas a la BBDD</p>
+            <form action="{% url 'encuestillas:formulariopreguntas' %}">
+                <button>Añadir pregunta</button>
+            </form>
+        {% endif %}
+    </body>
+</html>

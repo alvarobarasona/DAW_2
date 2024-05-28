@@ -42,7 +42,6 @@ class IndexView(FormMixin, ListView):
                         meses = 0
                     coche.anos = anos
                     coche.meses = meses
-                    coche.save()
 
             return self.render_to_response(context)
         else:

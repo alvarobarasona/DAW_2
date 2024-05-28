@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coches - Index</title>
+        <style>
+            img {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if coches %}
+            <h1>Coches</h1>
+            {% for coche in coches %}
+                <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
+                <h3>{{ coche.fabricante }} {{ coche.modelo }}</h3>
+                <p>Precio: {{ coche.precio }}</p>
+                <p>Estado: {{ coche.estado }}</p>
+                <p>Combustible: {{ coche.combustible }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No hay coches añadidos a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

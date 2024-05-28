@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manteni - Index</title>
+    </head>
+    <body>
+        {% if mantenimientos %}
+            {% for mantenimiento in mantenimientos %}
+                <a href="{% url 'manteni:detail' mantenimiento.pk %}">{{ mantenimiento.edificio.nombre }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>No hay mantenimientos realizados</p>
+        {% endif %}
+    </body>
+</html>

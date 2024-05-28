@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fallout - Lista Personajes</title>
+    </head>
+    <body>
+        {% if personajes %}
+            {% for personaje in personajes %}
+                <a href="{% url 'falloutcin:personaje' personaje.slug %}">
+                    <img src="{{ personaje.foto_portada.url }}" alt="{{ personaje.nombre }}">
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>No hay personajes añadidos a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

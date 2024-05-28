@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memitos - Detail</title>
+    </head>
+    <body>
+        <div>
+            <h1>{{ meme.titulo }}</h1>
+            <p>{{ meme.descripcion }}</p>
+            <img src="{{ meme.imagen.url }}" alt="{{ meme.titulo }}">
+        </div>
+        <form action="{% url 'memitos:comentario' slug=meme.slug %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+        {% if comentarios %}
+            <h2>Comentarios</h2>
+            {% for comentario in comentarios %}
+                <p>{{ comentario.texto }}</p>
+            {% endfor %}
+        {% else %}
+            <p>El meme no tiene comentarios</p>
+        {% endif %}
+    </body>
+</html>

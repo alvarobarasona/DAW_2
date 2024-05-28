@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recetas - Index</title>
+    </head>
+    <body>
+        {% if recetas %}
+            {% for receta in recetas %}
+                <a href="{% url 'recetillas:detail' receta.pk %}">{{ receta.nombre }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>No hay recetas añadidas</p>
+        {% endif %}
+    </body>
+</html>

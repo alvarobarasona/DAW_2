@@ -1,0 +1,31 @@
+SISTEMA DE MANTENIMIENTO DE VEHÍCULOS
+
+1. Habrá una vista inicial con dos opciones:
+- Consultar mantenimientos de usuarios(Llevará a una vista en la que aparecerá una lista con los mantenimientos realizados. Al entrar en uno de los mantenimientos realizados,
+se mostrará en detalle los datos del mantenimiento(cliente, vehiculo, tipo de mantenimiento y precio). Esta vista tendrá un boton que llevara a la vista inicial)
+- Realizar mantenimiento(Llevará al paso 2).
+
+2. Esta vista contendrá un formulario de login en el que se introducen los datos de un cliente(dni, nombre, apellido, foto). Si el usuario ya existe,
+se le pedira que introduzca otro dni
+
+3. Si el usuario existe en la BBDD, se le redireccionará a otro formulario en el tendrá que introducir los datos de un vehículo(matrícula, marca, modelo, precio).
+Si el coche ya existe, se pedirá que introduzca una matrícula distinta.
+
+4. Si el coche está en la BBDD, se redireccionará a una view en la que aparecerá un listado con los tipos de mantenimiento disponible:
+- Cambio de ruedas: 400€
+- Cambio de aceite: 150€
+- Cambio de frenos: 200€
+- Revisión completa: 500€
+
+5. Según el tipo de mantenimiento seleccionado, se redireccionará a una view en la que aparecerán los datos del cliente, del vehículo, y del precio del mantenimineto,
+en función del precio del vehículo (ej: precio vehículo: 8000€ * Cambio de frenos: 200€ --> (8000 * 200) / 6000 = 266,66 ) Esta vista tendrá un botón que redireccionará
+a la vista inicial.
+
+Habrá 3 tipos de modelos:
+Usuario(dni, nombre, apellido, foto)
+Vehículo(matrícula, marca, modelo, precio, fk_usuario)
+Mantenimiento(fecha, fk_usuario, fk_vehiculo)
+
+Se debe usar slug para todos los modelos
+Se tendrá que hacer una api en la que se muestren los datos de los usuarios, coches y mantenimientos si eres admin. Si no, podrás consumir los datos solo de los coches y mantenimientos,
+y no podrán ser modificados.

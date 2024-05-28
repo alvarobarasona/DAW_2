@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encuestas - Formulario respuestas</title>
+    </head>
+    <body>
+        <h1>Formulario Respuesta</h1>
+        <form action="{% url 'encuestillas:formulariorespuestas' pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Añadir</button>
+        </form>
+        <form action="{% url 'encuestillas:detallepregunta' pk %}">
+            <button>Cancelar</button>
+        </form>
+    </body>
+</html>
