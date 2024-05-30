@@ -54,59 +54,59 @@ Comando para conectarse desde terminal:
              -u : usuario
              -p : contraseña de la bbdd
              -D : base de datos
+
 si queremos conectarnos a la base de datos para redireccionar el archivo con las tablas:
-
  mysql -u nombre_usuario -p contraseña_bbdd < nombre_de_la_base_de_datos.sql
+
 Comando para desconectarse:
-
  QUIT;
+
 Comando para salir de la terminal:
-
  EXIT;
+
 Comandos adicionales:
+
 Ver las distintas base de datos:
-
  SHOW DATABASES;
+
 Seleccionar una base de datos para usar:
-
  USE nombre_de_la_base_de_datos;
+
 Mostrar tablas en la base de datos actual:
-
  SHOW TABLES;
-Mostrar la estructura de una tabla:
 
+Mostrar la estructura de una tabla:
  DESCRIBE nombre_de_la_tabla;
  o
  DESC nombre_de_la_tabla;
+
 Eliminar la base de datos:
-
  DROP DATABASE nombre_de_la_base_de_datos;
+
 Eliminar la tabla:
-
  DROP TABLE nombre_de_la_tabla;
+
 Eliminar el usuario:
-
  DROP USER 'nombre_usuario'@'localhost';
+
 Ver los usuarios existentes:
-
  SELECT user, host FROM mysql.user;
-Ver los permisos de un usuario:
 
+Ver los permisos de un usuario:
 SHOW GRANTS FOR 'nombre_usuario'@'localhost';
 o
 SELECT * FROM mysql.user WHERE user = 'nombre_usuario';
-Eliminar los permisos de un usuario:
 
+Eliminar los permisos de un usuario:
 REVOKE ALL PRIVILEGES ON nombre_de_la_base_de_datos.* FROM 'nombre_usuario'@'localhost';
 
 FLUSH PRIVILEGES;
 ----------RESPALDO BACKUP------------------------
 
 Para hacer un respaldo de la base de datos:
-
 mysqldump > db_bseDe_datos.sql
-Para restaurar la base de datos:
 
+Para restaurar la base de datos:
 mysql -u acciones -p acciones < db_baseDe_datos.sql
 
 Para asegurarnos que estamos usando la base de datos correcta:

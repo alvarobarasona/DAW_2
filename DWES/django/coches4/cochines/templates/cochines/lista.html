@@ -17,9 +17,6 @@
                 <a href="{% url 'cochines:detalle' slug=coche.slug %}">
                     <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
                     <p>{{ coche.fabricante }} {{ coche.modelo }}</p>
-                    <p>Precio: {{ coche.precio }}</p>
-                    <p>Estado: {{ coche.estado }}</p>
-                    <p>Combustible: {{ coche.combustible }}</p>
                 </a>
                 <br>
             {% endfor %}

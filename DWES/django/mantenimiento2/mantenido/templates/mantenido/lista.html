@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+    </head>
+    <body>
+        {% if mantenimientos %}
+            {% for mantenimiento in mantenimientos %}
+                <a href="{% url 'mantenido:detalle' slug=mantenimiento.slug %}">{{ mantenimiento.edificio.nombre }} - {{ mantenimiento.fecha }}</a><br>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% else %}
+            <p>No hay mantenimientos añadidos a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

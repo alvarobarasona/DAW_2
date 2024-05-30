@@ -16,5 +16,8 @@
         <p>Estado: {{ coche.estado }}</p>
         <p>Combustible: {{ coche.combustible }}</p>
         <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
+        <form action="{% url 'cochines:lista' %}">
+            <button>Volver</button>
+        </form>
     </body>
 </html>

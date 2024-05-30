@@ -5,7 +5,6 @@
         header('Location: index.php');
         die();
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@
     <body>
         <h1>Iniciar sesión</h1>
         <?php showError('invalid-user', $login_errors); ?>
-        <form action="login.php" method="post">
+        <form action="" method="post">
             <div>
                 <label for="username">Usuario:</label>
                 <input type="text" name="username" id="username" value="<?php showValue('username'); ?>">
@@ -38,7 +37,8 @@
                 <label for="remember">Recordar usuario:</label>
                 <input type="checkbox" name="remember" id="remember" <?php showChecked('remember') ?>>
             </div>
-            <input type="submit" name="login-button" value="Entrar">
+            <button type="submit" name="login-button" formaction="login.php">Entrar</button>
+            <button type="submit" name="register-button" formaction="register.php">Registrarse</button>
         </form>
     </body>
 </html>

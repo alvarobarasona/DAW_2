@@ -83,17 +83,18 @@
     function consumeToken($cookie_token) {
         global $db;
         $query = $db->prepare('UPDATE tokens SET consumido = true WHERE token = :token');
-        $query->bindValue(':token', $cookie_token);
+        $query->bindParam(':token', $cookie_token);
         $query->execute();
     }
 
     function showTweets($user_id = null) {
         global $db;
         if($user_id == null) {
-            $db_tweets = $db->prepare('SELECT * FROM tweets, users WHERE tweets.user_id = users.id');
+            $db_tweets = $db->prepare('SELECT * FROM tweets, users WHERE tweets.user_id = users.id ORDER BY tweets.fecha DESC');
             $db_tweets->execute();
         } else {
-            $db_tweets = $db->prepare('SELECT * FROM tweets, users WHERE tweets.user_id = :user_id AND tweets.user_id = users.id');
+            $db_tweets = $db->prepare('SELECT * FROM tweets WHERE user_id = (SELECT id FROM users WHERE id = :user_id) ORDER BY fecha DESC');
+            //$db_tweets = $db->prepare('SELECT * FROM tweets, users WHERE tweets.user_id = :user_id AND tweets.user_id = users.id');
             $db_tweets->bindParam(':user_id', $user_id);
             $db_tweets->execute();
         }
@@ -106,6 +107,17 @@
         $query_tweet->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $query_tweet->bindParam(':tweet', $tweet);
         $query_tweet->bindParam(':tweet_date', $tweet_date);
+        $query_tweet->execute();
+    }
+
+    function deleteTweet() {
+        $user_id = $_SESSION['user']['id'];
+        $tweet_id = $_POST['delete-tweet'];
+        
+        global $db;
+        $query_tweet = $db->prepare('DELETE FROM tweets WHERE id = :id AND user_id = :user_id');
+        $query_tweet->bindParam(':id', $tweet_id);
+        $query_tweet->bindParam(':user_id', $user_id);
         $query_tweet->execute();
     }
 ?>

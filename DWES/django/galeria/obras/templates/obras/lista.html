@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galería - Lista obras</title>
+        <style>
+            img {
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if obras %}
+            {% for obra in obras %}
+                <a href="{% url 'obras:detalle' slug=obra.slug %}">
+                    <p>{{ obra.titulo }}</p>
+                    <img src="{{ obra.imagen.url }}" alt="{{ obra.titulo }}">
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>No hay obras añadidas a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

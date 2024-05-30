@@ -9,11 +9,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minitwitter - Perfil</title>
+        <title>Minitwitter - Inicio</title>
         <style>
-            img {
+            .img {
                 width: 80px;
+                height: 80px;
                 border-radius: 50%;
+                overflow: hidden;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
             .tweet {
                 background-color: gray;
@@ -27,13 +34,16 @@
     </head>
     <body>
         <h1>Minitwitter</h1>
-        <h2>Tweets</h2>
+        <h2>Bienvenid@ <?= $_SESSION['user']['username']; ?></h2>
+        <h3>Tweets</h3>
         <?php foreach(showTweets() as $tweet) : ?>
             <div class="tweet">
-                <img src="media/<?= $tweet['foto'] ?>" alt="<?= $tweet['username'] ?>">
-                <span><?= $tweet['username'] ?></span>
-                <p><?= $tweet['tweet'] ?></p>
-                <p><?= $tweet['fecha'] ?></p>
+                <div class="img">
+                    <img src="media/<?= $tweet['foto']; ?>" alt="<?= $tweet['username'] ?>">
+                </div>
+                <span><?= $tweet['username']; ?></span>
+                <p><?= $tweet['tweet']; ?></p>
+                <p><?= $tweet['fecha']; ?></p>
             </div>
         <?php endforeach; ?>
         <form action="" method="post">
@@ -42,6 +52,7 @@
             <?php showError('empty-tweet', $index_errors); ?>
         </form>
         <form action="" method="post">
+            <button type="submit" name="private-button">Perfil</button>
             <button type="submit" name="logout-button">Cerrar sesión</button>
         </form>
     </body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario salario</title>
+        <style>
+            img {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{% url 'cochines:formdinero' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+        {% if coches %}
+            {% for coche in coches %}
+                <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
+                <p>Tardarás un total de {{ coche.anos }} años y {{ coche.meses }} meses en pagar este coche</p>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
