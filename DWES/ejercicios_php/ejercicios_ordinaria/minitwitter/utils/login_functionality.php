@@ -9,36 +9,42 @@
 
     $login_errors = [];
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login-button'])) {
-        if(!isValidData('username')) {
-            $login_errors['empty-name'] = 'El campo del usuario no puede estar vacío';
-        }
-        if(!isValidData('password')) {
-            $login_errors['empty-password'] = 'El campo de la contraseña no puede estar vacío';
-        }
-
-        if(empty($login_errors)) {
-            $user = $_POST['username'];
-            $password = $_POST['password'];
-
-            if(userExists($user, $password)) {
-
-                $user_data = getUserData($user);
-             
-                $_SESSION['user'] = $user_data;
-
-                if(isset($_POST['remember'])) {
-                    $remember_token = getNewToken(TOKEN_LENGTH);
-                    $time_to_expire = time() + TOKEN_EXPIRATION_SECONDS;
-                    saveToken($remember_token, $user_data['id'], date('Y-m-d H:i:s', $time_to_expire));
-                    setcookie(REMEMBER_COOKIE_NAME, $remember_token, $time_to_expire, '/');
-                }
-
-                header('Location: ../index.php');
-                die();
-            } else {
-                $login_errors['invalid-user'] = 'El usuario o la contraseña son incorrectos';
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(isset($_POST['login-button'])) {
+            if(!isValidData('username')) {
+                $login_errors['empty-name'] = 'El campo del usuario no puede estar vacío';
             }
+            if(!isValidData('password')) {
+                $login_errors['empty-password'] = 'El campo de la contraseña no puede estar vacío';
+            }
+    
+            if(empty($login_errors)) {
+                $user = $_POST['username'];
+                $password = $_POST['password'];
+    
+                if(userExists($user, $password)) {
+    
+                    $user_data = getUserData($user);
+                 
+                    $_SESSION['user'] = $user_data;
+    
+                    if(isset($_POST['remember'])) {
+                        $remember_token = getNewToken(TOKEN_LENGTH);
+                        $time_to_expire = time() + TOKEN_EXPIRATION_SECONDS;
+                        saveToken($remember_token, $user_data['id'], date('Y-m-d H:i:s', $time_to_expire));
+                        setcookie(REMEMBER_COOKIE_NAME, $remember_token, $time_to_expire, '/');
+                    }
+    
+                    header('Location: ../index.php');
+                    die();
+                } else {
+                    $login_errors['invalid-user'] = 'El usuario o la contraseña son incorrectos';
+                }
+            }
+        }
+        if(isset($_POST['recover-redirect'])) {
+            header('Location: ../recover_password.php');
+            die();
         }
     }
 ?>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cinesa - Detalle película</title>
+        <style>
+            img {
+                width: 240px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ pelicula.titulo }}</h1>
+        <p>Fecha de rodaje: {{ pelicula.fecha_rodaje }}</p>
+        <p>Fecha de estreno: {{ pelicula.fecha_estreno }}</p>
+        <h2>Sinapsis</h2>
+        <p>{{ pelicula.sinapsis }}</p>
+        <img src="{{ pelicula.imagen.url }}" alt="{{ pelicula.titulo }}">
+    </body>
+</html>

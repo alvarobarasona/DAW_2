@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Autores - Detalle autor</title>
+        <style>
+            img {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ autor.nombre }} {{ autor.apellido }}</h1>
+        <p>{{ autor.biografia }}</p>
+        <p>Fecha de nacimiento: {{ autor.fecha_nacimiento }}</p>
+        <img src="{{ autor.foto.url }}" alt="{{ autor.nombre }}-{{ autor.apellido }}">
+        <br>
+        <form action="">
+            <button formaction="{% url 'autorines:formulariolibro' text=autor.slug %}">Añadir libro</button>
+            <button formaction="{% url 'autorines:autoreslista' %}">Volver</button>
+        </form>
+        {% if libros %}
+            {% for libro in libros %}
+                <a href="{% url 'autorines:detallelibro' slug=libro.slug %}">{{ libro.titulo }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>Este autor no tiene libros añadidos en la BBDD</p>
+        {% endif %}
+    </body>
+</html>

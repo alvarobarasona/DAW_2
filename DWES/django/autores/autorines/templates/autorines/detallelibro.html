@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Autores - Detalle libro</title>
+        <style>
+            img {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ libro.titulo }}</h1>
+        <h2>Sinopsis</h2>
+        <p>{{ libro.sinopsis }}</p>
+        <p>Fecha de publicación: {{ libro.fecha_publicacion }}</p>
+        <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}">
+        <form action="{% url 'autorines:detalleautor' slug=libro.autor.slug %}">
+            <button>Volver</button>
+        </form>
+    </body>
+</html>

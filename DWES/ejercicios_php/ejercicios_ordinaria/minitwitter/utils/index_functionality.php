@@ -11,11 +11,7 @@
                 $user_id = $_SESSION['user']['id'];
                 $tweet = $_POST['tweet-input'];
                 $tweet_date = date('Y-m-d H:i:s', time());
-    
-                var_dump($user_id);
-                var_dump($tweet);
-                var_dump($tweet_date);
-    
+
                 addTweet($user_id, $tweet, $tweet_date);
             }
         }

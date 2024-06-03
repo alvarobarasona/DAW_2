@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cinesa - Detalle director</title>
+    </head>
+    <style>
+        img {
+            width: 240px;
+        }
+    </style>
+    <body>
+        <h1>{{ director.nombre }}</h1>
+        <p>Fecha de nacimiento: {{ director.fecha_nacimiento }}</p>
+        <h2>Biografía</h2>
+        <p>{{ director.biografia }}</p>
+        <img src="{{ director.foto.url }}" alt="{{ director.nombre }}">
+        <br>
+        {% if peliculas %}
+            {% for pelicula in peliculas %}
+                <a href="{% url 'cinesa:detallepelicula' slug=pelicula.slug %}">{{ pelicula.titulo }}</a><br>
+            {% endfor %}
+        {% endif %}
+        <form action="{% url 'cinesa:formulariopelicula' director.pk %}">
+            <button>Añadir película</button>
+        </form>
+    </body>
+</html>

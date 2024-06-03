@@ -46,11 +46,13 @@
                 <p><?= $tweet['fecha']; ?></p>
                 <form action="" method="post">
                     <button type="submit" name="delete-tweet" value="<?= $tweet['id'] ?>">Eliminar</button>
+                    <button type="submit" name="modify-redirect" value="<?= $tweet['id'] ?>">Modificar</button>
                 </form>
             </div>
         <?php endforeach; ?>
         <form action="" method="post">
             <button type="submit" name="index-button">Inicio</button>
+            <button type="submit" name="logout-button">Cerrar sesión</button>
         </form>
     </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Concesionario - Detalle persona</title>
+        <style>
+            img {
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ persona.nombre }} {{ persona.apellido }}</h1>
+        <p>Fecha nacimiento: {{ persona.fecha_nacimiento }}</p>
+        <img src="{{ persona.foto.url }}" alt="{{ persona.nombre }}-{{ persona.apellido }}">
+        <br>
+        <form action="">
+            <button type="submit" formaction="{% url 'concesi:formulariocoche' persona.pk %}">Añadir coche</button>
+            <button type="submit" formaction="{% url 'concesi:listapersonas' %}">Volver</button>
+        </form>
+        {% if coches %}
+            {% for coche in coches %}
+                <a href="{% url 'concesi:detallecoche' slug=coche.slug %}">{{ coche.fabricante }} {{ coche.modelo }}</a><br>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>

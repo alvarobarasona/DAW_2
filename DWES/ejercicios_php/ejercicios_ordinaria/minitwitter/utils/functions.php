@@ -1,4 +1,12 @@
 <?php
+    //Todo esto es para que funcione el phpmailer
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
+
     function isValidData($data) {
         return isset($_POST[$data]) && $_POST[$data] !== "" ? true : false;
     }
@@ -18,13 +26,27 @@
         echo isset($_POST[$name]) && $_POST[$name] === "on" ? "checked" : "";
     }
 
-    function userExists($username, $password) {
+    function userExists($username, $password = null) {
         global $db;
         $query = $db->prepare('SELECT * FROM users WHERE username = :username');
         $query->bindParam(':username', $username);
         $query->execute();
         $user = $query->fetch(PDO::FETCH_ASSOC);
-        return $user && password_verify($password, $user['user_password']) ? true : false;
+        if($password == null) {
+            return $user ? true : false;
+        } else {
+            return $user && password_verify($password, $user['user_password']) ? true : false;
+        }
+    }
+
+    function registerUser($username, $password, $email) {
+        //password_hash
+        global $db;
+        $query = $db->prepare('INSERT INTO users (username, user_password, email, foto) VALUES (:username, :user_password, :email, "default_img.png")');
+        $query->bindParam(':username', $username);
+        $query->bindParam(':user_password', password_hash($password, PASSWORD_DEFAULT));
+        $query->bindParam(':email', $email);
+        $query->execute();
     }
 
     function getUserData($username) {
@@ -116,8 +138,67 @@
         
         global $db;
         $query_tweet = $db->prepare('DELETE FROM tweets WHERE id = :id AND user_id = :user_id');
-        $query_tweet->bindParam(':id', $tweet_id);
+        $query_tweet->bindParam(':id', $tweet_id, PDO::PARAM_INT);
         $query_tweet->bindParam(':user_id', $user_id);
         $query_tweet->execute();
+    }
+
+    function modifyTweet($tweet_id, $tweet_text) {
+         global $db;
+         $query_tweet = $db->prepare('UPDATE tweets SET tweet = :tweet_text WHERE id = :tweet_id');
+         $query_tweet->bindParam(':tweet_text', $tweet_text);
+         $query_tweet->bindParam(':tweet_id', $tweet_id, PDO::PARAM_INT);
+         $query_tweet->execute();
+    }
+
+    function getTweetText($tweet_id) {
+        global $db;
+        $query_tweet = $db->prepare('SELECT tweet FROM tweets WHERE id = :tweet_id');
+        $query_tweet->bindParam(':tweet_id', $tweet_id, PDO::PARAM_INT);
+        $query_tweet->execute();
+        return $query_tweet->fetchColumn();
+    }
+
+    function sendEmail($email) {
+        $mail = new PHPMailer(true);
+
+        $token = getNewToken(64);
+
+        saveToken();
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER; //muestra el resultado de la ejecución
+            $mail->isSMTP(); //usa el protocolo SMTP
+            $mail->Host = 'smtp.educa.madrid.org'; //Set the SMTP server to send through
+            $mail->SMTPAuth = false; //Educamadrid no utiliza auth
+            $mail->Username = 'alvaro.barasonagismero@educa.madrid.org'; //SMTP username
+            $mail->Password = 'secret'; //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->Port = 587;
+
+            $mail->Charset = 'utf-8';
+        
+            //Recipients
+            $mail->setFrom('alvaro.barasonagismero@educa.madrid.org', 'Minitwitter');
+            $mail->addAddress($email, 'example'); //Add a recipient
+        
+            //Content
+            $mail->Subject = 'Recuperación de contraseña';
+            $mail->Body = 'Para recuperar la contraseña <b>pincha aquí</b>';
+        
+            $mail->send();
+            echo 'El mensaje se ha enviado correctamente';
+        } catch (Exception $e) {
+            echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
+        }
+    }
+
+    function emailExists($email) {
+        global $db;
+        $email_query = $db->prepare('SELECT email FROM users WHERE email = :email');
+        $email_query->bindParam(':email', $email);
+        $email_query->execute();
+        return $email_query->fetchColumn() ? true : false;
     }
 ?>

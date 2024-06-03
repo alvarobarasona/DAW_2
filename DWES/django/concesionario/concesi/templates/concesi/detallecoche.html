@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Concesionario - Detalle coche</title>
+        <style>
+            img {
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ coche.fabricante }} {{ coche.modelo }}</h1>
+        <p>Precio: {{ coche.precio }} €</p>
+        <img src="{{ coche.imagen.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
+        <form action="{% url 'concesi:listapersonas' %}">
+            <button>Volver</button>
+        </form>
+    </body>
+</html>

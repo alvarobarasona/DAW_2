@@ -39,6 +39,7 @@
             </div>
             <button type="submit" name="login-button" formaction="login.php">Entrar</button>
             <button type="submit" name="register-button" formaction="register.php">Registrarse</button>
+            <button type="submit" name="recover-redirect">Olvidé mi contraseña</button>
         </form>
     </body>
 </html>
