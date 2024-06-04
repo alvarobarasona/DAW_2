@@ -1,0 +1,1 @@
+sudo apt install php-cli php-mysql php-xml php-mbstring php-zip php-curl php-soap php-json
