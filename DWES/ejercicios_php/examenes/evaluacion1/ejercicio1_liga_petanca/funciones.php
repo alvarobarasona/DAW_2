@@ -38,17 +38,14 @@
     }
 
     function obtenerSorteo($array_partidos) {
-        foreach($array_partidos as $partido) {
-            print_r($partido);
-        }
+        var_dump($array_partidos);
 
         shuffle($array_partidos);
+
         echo '<br>';
         echo '<br>';
 
-        foreach($array_partidos as $partido) {
-            print_r($partido);
-        }
+        var_dump($array_partidos);
     }
     obtenerSorteo(obtenerArrayPartidos(obtenerArrayPersonas(3)));
 ?>

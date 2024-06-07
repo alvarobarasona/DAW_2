@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Videojuegos - Detalle cliente</title>
+        <style>
+            img {
+                width: 270px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
+        <p>Dirección: {{ cliente.direccion }}</p>
+        <p>Fecha de nacimiento: {{ cliente.fecha_nacimiento }}</p>
+        <img src="{{ cliente.foto.url }}" alt="{{ cliente.nombre }}-{{ cliente.apellido }}">
+        <br>
+        <form action="">
+            <button formaction="{% url 'jueguitos:formulariovideojuego' text=cliente.slug %}">Añadir videojuego</button>
+            <button formaction="{% url 'jueguitos:listaclientes' %}">Cancelar</button>
+        </form>
+        {% if videojuegos %}
+            {% for videojuego in videojuegos %}
+                <a href="{% url 'jueguitos:detallevideojuego' slug=videojuego.slug %}">{{ videojuego.titulo }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>El cliente no ha comprado ningún videojuego</p>
+        {% endif %}
+    </body>
+</html>

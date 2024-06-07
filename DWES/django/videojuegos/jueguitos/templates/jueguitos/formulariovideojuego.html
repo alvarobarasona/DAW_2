@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Videojuegos - Formulario registro videojuego</title>
+    </head>
+    <body>
+        <h1>Formulario registro videojuego</h1>
+        <form action="{% url 'jueguitos:formulariovideojuego' slug_cliente %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Añadir</button>
+        </form>
+        <form action="{% url 'jueguitos:detallecliente' slug_cliente %}">
+            <button>Cancelar</button>
+        </form>
+    </body>
+</html>
