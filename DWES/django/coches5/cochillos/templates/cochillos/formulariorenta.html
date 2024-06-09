@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coches - Formulario renta</title>
+        <style>
+            img {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario renta</h1>
+        <form action="{% url 'cochillos:formulariorenta' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+        <form action="{% url 'cochillos:listacoches' %}">
+            <button>Cancelar</button>
+        </form>
+        {% if coches %}
+            {% for coche in coches %}
+                <img src="{{ coche.foto.url }}" alt="{{ coche.fabricante }}-{{ coche.modelo }}">
+                <p>Tardarás un total de {{ coche.anios }} años y {{ coche.meses }} meses en pagar este coche</p>
+                <br>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
