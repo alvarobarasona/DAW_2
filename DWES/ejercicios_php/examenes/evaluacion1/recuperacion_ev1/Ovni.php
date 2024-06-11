@@ -1,15 +1,12 @@
 <?php
     trait BaseOvni {
-        protected float $velocidad;
-        protected boolean $camuflaje;
-        public function __construct($velocidad, $camuflaje) {
-            $this->velocidad = $velocidad;
-            $this->camuflaje = $camuflaje;
-        }
+        protected int $velocidad;
+        protected string $camuflaje;
+
+        abstract function pintarHTML();
+        abstract function cargarInfo($info);
     }
     abstract class Ovni {
         use BaseOvni;
-        abstract function pintarHTML();
-        abstract function cargarInfo();
     }
 ?>

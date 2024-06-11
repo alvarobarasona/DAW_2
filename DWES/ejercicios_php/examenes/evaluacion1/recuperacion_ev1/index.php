@@ -1,15 +1,17 @@
 <?php
     require_once('init.php');
 
-    $data = read('data.csv');
-    $titles = $data[0];
+    $csv = file('data.csv');
 
-    $texts = [];
-    array_push($texts, $data[1]);
+    $array_avistamientos = [];
 
-    var_dump($titles);
-
-    $avistamiento = new Avistamiento;
+    for($i = 0; $i < count($csv); $i++) {
+        if($i !== 0) {
+            $avistamiento = new Avistamiento();
+            $avistamiento->cargarInfo($csv[$i]);
+            array_push($array_avistamientos, $avistamiento);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +22,8 @@
         <title>Ejercicio 2</title>
     </head>
     <body>
-        
+        <?php foreach($array_avistamientos as $avistamiento) : ?>
+            <?php $avistamiento->pintarHTML(); ?>
+        <?php endforeach; ?>
     </body>
 </html>

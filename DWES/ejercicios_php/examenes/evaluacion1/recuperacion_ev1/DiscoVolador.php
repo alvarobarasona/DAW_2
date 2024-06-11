@@ -1,11 +1,6 @@
 <?php
     class DiscoVolador extends Ovni {
-        private float $radio;
-
-        public function __construct($velocidad, $camuflaje, $radio) {
-            parent::__construct($velocidad, $camuflaje);
-            $this->radio = $radio;
-        }
+        private int $radio;
 
         function pintarHTML() {
             echo
@@ -15,6 +10,11 @@
             <p>$this->radio</p>";
         }
 
-        
+        function cargarInfo($info) {
+            $array = explode(';', $info);
+            $this->velocidad = $array[5];
+            $this->camuflaje = $array[6];
+            $this->radio = $array[7];
+        }
     }
 ?>
