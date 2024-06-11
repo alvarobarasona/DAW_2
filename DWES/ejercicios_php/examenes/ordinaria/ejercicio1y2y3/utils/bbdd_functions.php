@@ -118,23 +118,62 @@
         return $db->obtenDatos();
     }
 
-    function show_pages($url_href_name, $table_name, $offset, $limit) {
-        global $db;
-
-        $current_page = isset($_GET[$url_href_name]) ? (int)$_GET[$url_href_name] : 1;
-
-        $query = "SELECT * FROM $table_name LIMIT :offset, :max_limit";
-
-        $db->ejecuta($query, $offset, $limit);
-        $pages_number = $db->obtenDatos();
-
-        echo "<a href='?page=" . ($current_page == 1 ? $pages_number : $current_page - 1) . "'><</a>";
-        for($i = 1; $i <= $pages_number; $i++) {
-            
-            echo "<a href='?page= $i'>$i</a>";
-        }
-        echo "<a href='?page=" . ($current_page == $pages_number ? 1 : $current_page + 1) . "'>></a>";
+    function redirect($path) {
+        header("Location: $path");
+        die();
     }
 
+    /**
+     * Esta función que obtiene el número de página de la url.
+     * 
+     * Devuelve el número de la pagina, y si no está inicializada,
+     * la inicializa a 1
+     * 
+     * @return int
+     */
+function page(){
+    return isset($_GET['page']) ? (int)$_GET['page'] : 1;
+}
 
+/**
+ * Funcion que obtiene la pagina actual en la que estas para mostrar los datos de esa pagina y calcula el numero de paginas en funcion de los datos que contenga la tabla que le pasas y el numero de elementos por pagina.
+ * 
+ * @params $table_name
+ * @params $rows_per_page
+ */
+function show_pages_all($table_name, $rows_per_page){
+
+    $current_page = page();
+    
+    $pages_number = getRowsNumber($table_name) / $rows_per_page;
+    
+    echo "<a href='?page=" . (1) . "'><<</a> "; 
+    echo "<a href='?page=" . ($current_page == 1 ? $pages_number : $current_page - 1) . "'><</a>";
+
+    for($i = 1; $i <= $pages_number; $i++) {
+        echo "<a href='?page=$i'>$i</a>";
+    }
+
+    echo "<a href='?page=" . ($current_page == $pages_number ? 1 : $current_page + 1) . "'>></a> ";
+    echo "<a href='?page=" . ($pages_number) . "'>>></a>";
+}
+
+/**
+ * Funcion que obtiene la pagina actual en la que estas para mostrar los datos de esa pagina y con el numero de paginas que le pases construye la paginacion.
+ * 
+ * @param $pages_number
+ * 
+ */
+function show_pages($pages_number){
+    $current_page = page();
+    echo "<a href='?page=" . (1) . "'><<</a> "; 
+    echo "<a href='?page=" . ($current_page == 1 ? $pages_number : $current_page - 1) . "'><</a>";
+
+    for($i = 1; $i <= $pages_number; $i++) {
+        echo "<a href='?page=$i'>$i</a>";
+    }
+
+    echo "<a href='?page=" . ($current_page == $pages_number ? 1 : $current_page + 1) . "'>></a> ";
+    echo "<a href='?page=" . ($pages_number) . "'>>></a>";
+}
 ?>

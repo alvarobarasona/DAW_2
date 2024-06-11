@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clubes - Lista clubes</title>
+    </head>
+    <body>
+        {% if clubes %}
+            {% for club in clubes %}
+                <a href="{% url 'asocis:detalleclub' slug=club.slug %}">{{ club.nombre }}</a>
+            {% endfor %}
+        {% else %}
+            <p>No hay clubes añadidos a la BBDD</p>
+        {% endif %}
+    </body>
+</html>

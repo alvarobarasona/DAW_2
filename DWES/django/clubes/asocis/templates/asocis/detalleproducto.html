@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clubes - Detalle Producto</title>
+    </head>
+    <body>
+        <h1>{{ producto.variedad }}</h1>
+        <p>Tipo: {{ producto.tipo }}</p>
+        <p>Concentración: {{ producto.concentracion }}</p>
+        <p>Precio: {{ producto.precio }} €</p>
+        <img src="{{ producto.foto.url }}" alt="{{ producto.variedad }}">
+    </body>
+</html>

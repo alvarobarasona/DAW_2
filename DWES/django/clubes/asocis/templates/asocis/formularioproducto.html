@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clubes - Formulario Producto</title>
+    </head>
+    <body>
+        <h1>Formulario producto</h1>
+        <form action="{% url 'asocis:formularioproducto' slug_club %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>

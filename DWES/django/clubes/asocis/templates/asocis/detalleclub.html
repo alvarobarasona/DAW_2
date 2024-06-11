@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clubes - Detalle club</title>
+    </head>
+    <body>
+        <h1>{{ club.nombre }}</h1>
+        <p>Dirección: {{ club.direccion }}</p>
+        <p>Numero socios: {{ club.numero_socios }}</p>
+        <p>Fecha apertura: {{ club.fecha_apertura }}</p>
+        <br>
+        <form action="{% url 'asocis:formularioproducto' club.slug %}">
+            <button>Añadir producto</button>
+        </form>
+
+        {% if productos %}
+            {% for producto in productos %}
+                <a href="{% url 'asocis:detalleproducto' slug=producto.slug %}">{{ producto.variedad }}</a><br>
+            {% endfor %}
+        {% else %}
+            <p>{{ club.nombre }} no tiene productos  registrados</p>
+        {% endif %}
+    </body>
+</html>
